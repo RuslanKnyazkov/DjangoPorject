@@ -1,0 +1,19 @@
+{% extends 'index.html'%}
+
+{%block title%}News{%endblock%}
+
+{%block content%}
+{% load templtags %}
+<h1>Колличество новостей {{news|length}}</h1>
+{%for n in news%}
+<div class="news_detail">
+    <h3>{{n.title | censor}}</h3>
+    <p>{{n.create_date| date:'M d Y'}}</p>
+    <p>{{n.text_post| truncatewords:24 | censor}}</p>
+    {% url 'single_news' n.pk as url %}
+    <a href="{{url}}"><button class="button" type="submit">Подробнее</button></a>
+</div>
+
+{%endfor%}
+
+{%endblock%}

@@ -1,0 +1,29 @@
+.news_detail {
+    border-radius: 25px;
+    margin: 5%;
+    border-style: groove;
+    padding: 5%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    }
+.news_detail p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    position: sticky;
+    left: 100%;}
+
+.news_detail a{
+    position: sticky;
+    left: 100%;}
+
+.preview-comment {
+    background: rgba(255, 250, 240, 0.22);
+    border-style: groove;
+    margin: 2%;
+    border-radius: 25px;
+}
+
+.first_char_user{
+}

@@ -1,12 +1,26 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView
-from .models import Post
+from django.views.generic import ListView, DetailView
+from .models import Post, Comment
+
+
 # Create your views here.
 
 
-class PostView(TemplateView):
-    template_name = 'index.html'
-    extra_context = {'posts': Post.objects.all()}
+class AllPostView(ListView):
+    model = Post
+    template_name = 'news.html'
+    context_object_name = 'news'
+    ordering = '-create_date'
+
+
+class DetailNews(DetailView):
+    model = Post
+    template_name = 'single_news.html'
+    # pk_url_kwarg = 'single_news'
+    context_object_name = 'news'
 
     def get_context_data(self, **kwargs):
-        return self.extra_context
+        context = super().get_context_data(**kwargs)
+        context['comments'] = Comment.objects.filter(
+            current_post=context['object']).order_by('-date_comment')
+        return context

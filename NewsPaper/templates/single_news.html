@@ -1,0 +1,26 @@
+{%extends 'news.html'%}
+
+{%block title%} {{news.title}} {%endblock%}
+
+{%block content%}
+{% load templtags %}
+<div class="news_detail">
+    <h3>{{news.title | censor}}</h3>
+    <p>{{news.create_date| date:'M d Y'}}</p>
+    <p>{{news.text_post | censor}}</p>
+    {% url 'news' as url %}
+    <a href="{{url}}"><button class="button" type="submit">Назад</button></a>
+</div>
+{%for comment in comments%}
+
+<div class="preview-comment">
+    <div class="firs_char_user">
+        <h1>{{comment.name_user}}</h1>
+        <p>{{comment.text| truncatewords:10 | censor}}</p>
+    </div>
+</div>
+
+
+{%endfor%}
+
+{%endblock%}
