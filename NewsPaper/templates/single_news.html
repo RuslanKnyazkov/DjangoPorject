@@ -1,4 +1,4 @@
-{%extends 'news.html'%}
+{%extends 'index.html'%}
 
 {%block title%} {{news.title}} {%endblock%}
 
@@ -7,20 +7,24 @@
 <div class="news_detail">
     <h3>{{news.title | censor}}</h3>
     <p>{{news.create_date| date:'M d Y'}}</p>
-    <p>{{news.text_post | censor}}</p>
+    <h5>{{news.text_post | censor}}</h5>
     {% url 'news' as url %}
     <a href="{{url}}"><button class="button" type="submit">Назад</button></a>
 </div>
-{%for comment in comments%}
+
+
+ {%for comment in comments%}
 
 <div class="preview-comment">
-    <div class="firs_char_user">
-        <h1>{{comment.name_user}}</h1>
-        <p>{{comment.text| truncatewords:10 | censor}}</p>
+    <div class="firs-char-user">
+        <h4 style="width: 25%; position: sticky; right: 100%">{{comment.name_user}}</h4>
+        <h6 style=" width: 25%; position: sticky; left: 100%">{{comment.date_comment| date:'M d Y'}}</h6>
+        <h5 style="width: 100%; position: sticky; right: 100%">{{comment.text| truncatewords:10 | censor}}</h5>
     </div>
 </div>
 
-
 {%endfor%}
+</div>
+
 
 {%endblock%}

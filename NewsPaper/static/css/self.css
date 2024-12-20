@@ -12,18 +12,35 @@
     margin-top: 0;
     margin-bottom: 1rem;
     position: sticky;
-    left: 100%;}
+    left: 100%;
+}
 
-.news_detail a{
+.news_detail a {
     position: sticky;
-    left: 100%;}
+    left: 100%;
+}
 
 .preview-comment {
     background: rgba(255, 250, 240, 0.22);
     border-style: groove;
-    margin: 2%;
+    margin: 5%;
     border-radius: 25px;
+    padding: 1%;
 }
 
-.first_char_user{
+.firs-char-user {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+}
+
+.first-char-user .h4{
+    width: 100%;
+    position: sticky;
+    right: 100%;
+}
+
+.first-char-user p1{
+    position: sticky;
+    left: 100%;
 }
