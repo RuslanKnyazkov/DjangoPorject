@@ -1,9 +1,20 @@
 {% extends 'index.html'%}
+{% load templtags %}
 
 {%block title%}News{%endblock%}
 
+{# Навигационная панель для новостей #}
+
+<!--<div class="nav-news-panel">-->
+<!--    <p1>Фильтр</p1>-->
+<!--    <a href="{% url 'create_post'%}"><p1>Создать пост</p1></a>-->
+<!--    <a href="{% url 'search_news'%}"><p1>Поиск новостей</p1></a>-->
+<!--    {%block nav%}{% endblock %}-->
+<!--</div>-->
+
+
 {%block content%}
-{% load templtags %}
+
 <h1>Колличество новостей {{news|length}}</h1>
 {%for n in news%}
 <div class="news_detail">
@@ -11,9 +22,47 @@
     <p>{{n.create_date| date:'M d Y'}}</p>
     <p>{{n.text_post| truncatewords:24 | censor}}</p>
     {% url 'single_news' n.pk as url %}
-    <a href="{{url}}"><button class="button" type="submit">Подробнее</button></a>
+    <a href="{{url}}">
+        <button class="button" type="submit">Подробнее</button>
+    </a>
+    {% if n.choice_categories == "news" %}
+    <a href="{% url 'update_news' n.pk %}">
+        <button class="button" type="submit">Редактировать</button>
+    </a>
+    <a href="{% url 'delete_post' n.pk %}">
+        <button class="button" type="submit">Удалить</button>
+    </a>
+    {% elif n.choice_categories == "article" %}
+    <a href="{% url 'update_article' n.pk %}">
+        <button class="button" type="submit">Редактировать</button>
+    </a>
+    <a href="{% url 'delete_article' n.pk %}">
+        <button class="button" type="submit">Удалить</button>
+    </a>
+    {% endif %}
 </div>
-
 {%endfor%}
+
+{# Информация о предыдущих страницах #}
+{% if page_obj.has_previous %}
+<a href="?{% url_replace page=1 %}">1</a>
+{% if page_obj.previous_page_number != 1 %}
+...
+<a href="?{% url_replace page=page_obj.previous_page_number %}">{{ page_obj.previous_page_number }}</a>
+{% endif %}
+{% endif %}
+
+{# Информация о текущей странице #}
+{{ page_obj.number }}
+
+{# Информация о следующих страницах #}
+{% if page_obj.has_next %}
+<a href="?{% url_replace page=page_obj.next_page_number %}">{{ page_obj.next_page_number }}</a>
+{% if paginator.num_pages != page_obj.next_page_number %}
+...
+<a href="?{% url_replace page=page_obj.paginator.num_pages %}">{{ page_obj.paginator.num_pages }}</a>
+{% endif %}
+{% endif %}
+
 
 {%endblock%}

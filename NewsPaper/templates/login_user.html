@@ -2,5 +2,18 @@
 
 
 {%block title%}{%endblock%}
-dsgdsgdfgdg
-{%block content%}{%endblock%}
+
+{%block content%}
+<div class="user_form_div">
+    <form method="post">
+        {% csrf_token %}
+        <ul>
+            <li>
+                {{form}}<br>
+            </li>
+        </ul>
+        <button type="submit">Войти</button>
+    </form>
+</div>
+
+{%endblock%}

@@ -1,10 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'index.html' %}
+
+{% load templtags %}
+
+{%block nav%}
+{% endblock %}
+
+{% block content %}
+<div class="all_detail_filter">
+    <h6>Наведите на меня для открытия фильтров</h6>
+    <form action="" method="get" class="form_class">
+        {%for filter in filterset.form%}
+        <p>{{filter.label}}:</p>
+        {{filter}}
+        {% endfor %}
+        <button type="submit" class="btn btn-success rounded-pill px-3">Найти</button>
+    </form>
+</div>
+
+<h1>Колличество новостей {{news|length}}</h1>
+<hr>
+
+
+{%for n in news%}
+<div class="news_detail">
+    <h3>{{n.title | censor}}</h3>
+    <p>{{n.create_date| date:'M d Y'}}</p>
+    <p>{{n.text_post| truncatewords:24 | censor}}</p>
+    {% url 'single_news' n.pk as url %}
+    <a href="{{url}}">
+        <button class="button" type="submit">Подробнее</button>
+    </a>
+</div>
+{%endfor%}
+
+
+{# Информация о предыдущих страницах #}
+{% if page_obj.has_previous %}
+<a href="?{% url_replace page=1 %}">1</a>
+{% if page_obj.previous_page_number != 1 %}
+...
+<a href="?{% url_replace page=page_obj.previous_page_number %}">{{ page_obj.previous_page_number }}</a>
+{% endif %}
+{% endif %}
+
+{# Информация о текущей странице #}
+{{ page_obj.number }}
+
+{# Информация о следующих страницах #}
+{% if page_obj.has_next %}
+<a href="?{% url_replace page=page_obj.next_page_number %}">{{ page_obj.next_page_number }}</a>
+{% if paginator.num_pages != page_obj.next_page_number %}
+...
+<a href="?{% url_replace page=page_obj.paginator.num_pages %}">{{ page_obj.paginator.num_pages }}</a>
+{% endif %}
+{% endif %}
+
+
+{%endblock%}

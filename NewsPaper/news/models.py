@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.db.models import Sum
+from django.urls import reverse
 
 
 class Author(models.Model):
@@ -25,7 +26,7 @@ class Category(models.Model):
     NAME_CATEGORIES = [
         ('спорт', 'news'),
         ('политика', 'article'),
-        ('образование', 'studing'),
+        ('образование', 'studying'),
         ('финансы', 'finance')
     ]
     name_categories = models.CharField(max_length=11,
@@ -48,15 +49,18 @@ class Post(models.Model):
 
     choice_categories = models.CharField(max_length=7,
                                          choices=NAME_POST,
-                                         default='новость')
+                                         default='news')
 
     test = models.ManyToManyField(Category, through='PostCategory')
-    title = models.CharField(max_length=255, unique=True)
-    text_post = models.TextField()
+    title = models.CharField(max_length=255, unique=True, verbose_name='Заголовок')
+    text_post = models.TextField(verbose_name='Текст')
     rating_post = models.IntegerField(default=0, db_column='rating_post')
 
     def __str__(self):
         return f'{self.title}'
+
+    def get_absolute_url(self):
+        return reverse('single_news', kwargs={"pk": self.pk})
 
     def preview(self):
         return f'{self.text_post[:124]}...'

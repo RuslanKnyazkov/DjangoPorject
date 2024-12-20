@@ -1,10 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'index.html' %}
+
+{% block content %}
+{% if request.user.is_authenticated%}
+<form method="post" class="form_class">
+    {% csrf_token %}
+    {{ form.as_p}}
+    <button type="submit"> Сохранить</button>
+</form>
+
+{% endif %}
+{% endblock %}

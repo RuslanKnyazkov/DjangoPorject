@@ -10,6 +10,9 @@
     <h5>{{news.text_post | censor}}</h5>
     {% url 'news' as url %}
     <a href="{{url}}"><button class="button" type="submit">Назад</button></a>
+    {%if request.user.id == news.author_post_id %} {# проверка является ли пользователем владельца поста #}
+
+    {% endif %}
 </div>
 
 
