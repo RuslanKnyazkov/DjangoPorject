@@ -8,10 +8,14 @@ class PostForm(forms.ModelForm):
         model = Post
         fields = ['title', 'text_post']
         widgets = {
-            'title': forms.TextInput(attrs={'class': 'form-control'}),
+            'title': forms.TextInput(attrs={"class": "form-control", 'placeholder': "Default input",
+                                            "aria-label": "default input example"}),
             'text_post': forms.Textarea(attrs={'class': 'form-control'})
         }
-
+    # def __init__(self):
+    #     super().__init__()
+    #     self.fields['title'].widgets.attrs.update({"class": "form-control", 'placeholder': "Default input",
+    #                                         "aria-label": "default input example"})
     def clean_title(self):
         title = self.cleaned_data['title']
         if len(title) > 200:

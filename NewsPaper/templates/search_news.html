@@ -6,21 +6,39 @@
 {% endblock %}
 
 {% block content %}
-<div class="all_detail_filter">
-    <h6>Наведите на меня для открытия фильтров</h6>
-    <form action="" method="get" class="form_class">
+
+
+<a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+  Фильтр.
+</a>
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Фильтры</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div class="dropdown mt-3">
+<!--      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">-->
+<!--        Dropdown button-->
+<!--      </button>-->
+<!--      <ul class="dropdown-menu">-->
+<!--        <li><a class="dropdown-item" href="#">Action</a></li>-->
+<!--        <li><a class="dropdown-item" href="#">Another action</a></li>-->
+<!--        <li><a class="dropdown-item" href="#">Something else here</a></li>-->
+<!--      </ul>-->
+        <form action="" method="get">
         {%for filter in filterset.form%}
         <p>{{filter.label}}:</p>
         {{filter}}
         {% endfor %}
         <button type="submit" class="btn btn-success rounded-pill px-3">Найти</button>
     </form>
+    </div>
+  </div>
 </div>
 
 <h1>Колличество новостей {{news|length}}</h1>
 <hr>
-
-
 {%for n in news%}
 <div class="news_detail">
     <h3>{{n.title | censor}}</h3>
