@@ -2,25 +2,23 @@
 
 {% load templtags %}
 
-{%block nav%}
+{% block side %}
+<form action="" method="get">
+
+    {%for filter in filterset.form%}
+    <div class="filter">
+        {{filter}}
+    </div>
+    {% endfor %}
+
+    <button type="submit" class="btn btn-success rounded-pill px-3">Найти</button>
+</form>
 {% endblock %}
 
-{% block content %}
-<div class="all_detail_filter">
-    <h6>Наведите на меня для открытия фильтров</h6>
-    <form action="" method="get" class="form_class">
-        {%for filter in filterset.form%}
-        <p>{{filter.label}}:</p>
-        {{filter}}
-        {% endfor %}
-        <button type="submit" class="btn btn-success rounded-pill px-3">Найти</button>
-    </form>
-</div>
 
+{% block content %}
 <h1>Колличество новостей {{news|length}}</h1>
 <hr>
-
-
 {%for n in news%}
 <div class="news_detail">
     <h3>{{n.title | censor}}</h3>
@@ -28,7 +26,7 @@
     <p>{{n.text_post| truncatewords:24 | censor}}</p>
     {% url 'single_news' n.pk as url %}
     <a href="{{url}}">
-        <button class="button" type="submit">Подробнее</button>
+        <button  type="submit" class="btn btn-outline-light">Подробнее</button>
     </a>
 </div>
 {%endfor%}

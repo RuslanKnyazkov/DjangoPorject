@@ -9,14 +9,31 @@
     <p>{{news.create_date| date:'M d Y'}}</p>
     <h5>{{news.text_post | censor}}</h5>
     {% url 'news' as url %}
-    <a href="{{url}}"><button class="button" type="submit">Назад</button></a>
+    <a href="{{url}}">
+        <button class="button" type="submit">Назад</button>
+    </a>
     {%if request.user.id == news.author_post_id %} {# проверка является ли пользователем владельца поста #}
-
+        </a>
+        {% if news.choice_categories == "news" %}
+        <a href="{% url 'update_news' news.pk %}">
+            <button class="button" type="submit">Редактировать</button>
+        </a>
+        <a href="{% url 'delete_post' news.pk %}">
+            <button class="button" type="submit">Удалить</button>
+        </a>
+        {% elif news.choice_categories == "article" %}
+        <a href="{% url 'update_article' news.pk %}">
+            <button class="button" type="submit">Редактировать</button>
+        </a>
+        <a href="{% url 'delete_article' news.pk %}">
+            <button class="button" type="submit">Удалить</button>
+        </a>
+        {% endif %}
     {% endif %}
 </div>
 
 
- {%for comment in comments%}
+{%for comment in comments%}
 
 <div class="preview-comment">
     <div class="firs-char-user">

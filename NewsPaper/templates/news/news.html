@@ -1,17 +1,11 @@
 {% extends 'index.html'%}
 {% load templtags %}
-
+{% csrf_token %}
 {%block title%}News{%endblock%}
 
-{# Навигационная панель для новостей #}
+{%block side %}
 
-<!--<div class="nav-news-panel">-->
-<!--    <p1>Фильтр</p1>-->
-<!--    <a href="{% url 'create_post'%}"><p1>Создать пост</p1></a>-->
-<!--    <a href="{% url 'search_news'%}"><p1>Поиск новостей</p1></a>-->
-<!--    {%block nav%}{% endblock %}-->
-<!--</div>-->
-
+{% endblock %}
 
 {%block content%}
 
@@ -23,23 +17,8 @@
     <p>{{n.text_post| truncatewords:24 | censor}}</p>
     {% url 'single_news' n.pk as url %}
     <a href="{{url}}">
-        <button class="button" type="submit">Подробнее</button>
+        <button class="btn btn-outline-info" type="submit">Подробнее</button>
     </a>
-    {% if n.choice_categories == "news" %}
-    <a href="{% url 'update_news' n.pk %}">
-        <button class="button" type="submit">Редактировать</button>
-    </a>
-    <a href="{% url 'delete_post' n.pk %}">
-        <button class="button" type="submit">Удалить</button>
-    </a>
-    {% elif n.choice_categories == "article" %}
-    <a href="{% url 'update_article' n.pk %}">
-        <button class="button" type="submit">Редактировать</button>
-    </a>
-    <a href="{% url 'delete_article' n.pk %}">
-        <button class="button" type="submit">Удалить</button>
-    </a>
-    {% endif %}
 </div>
 {%endfor%}
 

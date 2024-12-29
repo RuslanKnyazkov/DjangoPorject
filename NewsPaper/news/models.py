@@ -24,8 +24,8 @@ class Author(models.Model):
 
 class Category(models.Model):
     NAME_CATEGORIES = [
-        ('спорт', 'news'),
-        ('политика', 'article'),
+        ('спорт', 'sport'),
+        ('политика', 'politic'),
         ('образование', 'studying'),
         ('финансы', 'finance')
     ]

@@ -102,9 +102,30 @@ width: 70%;
 }
 
 
-.nav-news-panel {
-ul {display: flex;width: 100%;padding: 1rem;}
-li {display: flex;width: 25%;}
+.container-content {
+    width: 100%;
+    display: inline-flex;
+    text-align: -webkit-center;
+    min-height: 100vh;
 }
 
+.side {
+    display: inline;
+    max-width: 20%;
+    min-width: 20%;
+    background: #e2e3e52b;
+    padding: 0.50rem 0.50rem;
+}
 
+.content {
+    padding: 1rem 2rem;
+    width: 80%;
+}
+
+.filter {
+    text-align: justify;
+    padding: 0.25rem 0.50rem;
+    width: 100%;
+    display: inline-grid
+;
+}

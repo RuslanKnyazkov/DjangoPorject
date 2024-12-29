@@ -1,9 +1,8 @@
-from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views.generic import (ListView, DetailView, CreateView,
                                   UpdateView, DeleteView)
-from django.contrib.auth.mixins import LoginRequiredMixin
-
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
+from django.contrib.auth.models import Group
 from .forms import PostForm
 from .models import Post, Comment, Author
 from .filters import PostFilter
@@ -12,12 +11,17 @@ from .filters import PostFilter
 # Create your views here.
 
 
-class AllPostView(ListView):
+class NewsView(ListView):
     model = Post
     template_name = 'news.html'
     context_object_name = 'news'
     ordering = '-create_date'
     paginate_by = 10
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        news = Post.objects.all().filter(choice_categories='news')
+        context = super().get_context_data(object_list=news)
+        return context
 
 
 class PostSearchView(ListView):
@@ -50,11 +54,11 @@ class DetailNews(DetailView):
         return context
 
 
-class NewsCreated(CreateView):  #LoginRequiredMixin - убран для проверки задания
+class NewsCreated(PermissionRequiredMixin, CreateView):
+    permission_required = ('news.add_post')
     form_class = PostForm
     model = Post
     template_name = 'create_post.html'
-    #login_url = 'login'
 
     def form_valid(self, form):
         form.instance.author_post = Author.objects.get(id=self.request.user.id)
@@ -62,16 +66,32 @@ class NewsCreated(CreateView):  #LoginRequiredMixin - убран для пров
         form.choice_categories = 'news'
         return super().form_valid(form)
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['user'] = self.request.user
+        return context
 
-class PostUpdate(UpdateView):
+
+class PostUpdate(PermissionRequiredMixin, UpdateView):
+    permission_required = ('news.change_post')
     model = Post
     form_class = PostForm
     template_name = 'update_post.html'
 
 
-class DeletePost(DeleteView):
+class DeletePost(LoginRequiredMixin, DeleteView):
     model = Post
     success_url = reverse_lazy('post')
     template_name = 'delete_post.html'
 
 
+class AuthorView(ListView):
+    model = Author
+    template_name = 'all_authors.html'
+    context_object_name = 'authors'
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data()
+        context['is_author'] = self.request.user.groups.filter(name='authors').exists()
+        print(context)
+        return context

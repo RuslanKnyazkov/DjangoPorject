@@ -8,8 +8,9 @@ class PostForm(forms.ModelForm):
         model = Post
         fields = ['title', 'text_post']
         widgets = {
-            'title': forms.TextInput(attrs={'class': 'form-control'}),
-            'text_post': forms.Textarea(attrs={'class': 'form-control'})
+            'title': forms.TextInput(attrs={"class": "form-control", 'placeholder': "Default input",
+                                            "aria-label": "default input example"}),
+            'text_post': forms.Textarea(attrs={'class': 'form-control', 'cols': 60})
         }
 
     def clean_title(self):

@@ -1,0 +1,40 @@
+{% extends 'index.html' %}
+
+{% block title %} {% endblock %}
+{% block content %}
+<img src="{{ profile.get_avatar }}" alt="" width="100" height="100">
+    <ol class="list-group list-group">
+  <li class="list-group-item d-flex justify-content-between align-items-start">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold">Логин</div>
+      {{user.username}}
+    </div>
+
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-start">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold">Имя</div>
+      {{profile.firstname}}
+    </div>
+
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-start">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold">Фамилия</div>
+      {{profile.lastname}}
+    </div>
+
+  </li>
+          </li>
+  <li class="list-group-item d-flex justify-content-between align-items-start">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold">Емайл</div>
+      {{user.email}}
+    </div>
+</ol>
+
+<form action="{% url 'update_profile' profile.user_id %}" method="post">
+    {% csrf_token %}
+    <button type="submit"> Редактировать</button>
+</form>
+{% endblock %}

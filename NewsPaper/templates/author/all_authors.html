@@ -1,0 +1,27 @@
+{% extends 'index.html'%}
+
+{%block side%}
+{%if is_author%}
+<ul class="list-group">
+    <li >
+        <a href="{% url 'create_news' %}"><button type="button" class="btn btn-outline-primary">Создать новость</button></a>
+    </li>
+    <li>
+        <a href="{% url 'create_article' %}"><button type="button" class="btn btn-outline-primary">Создать статью</button></a>
+    </li>
+</ul>
+
+
+{% else %}
+<a href="{% url 'upgrade'%}"><button type="button" class="btn btn-outline-primary">Ставть автором</button> </a>
+{% endif %}
+{% endblock%}
+
+
+{%block content%}
+{% for author in authors%}
+<div>
+    {{author}}
+</div>
+{% endfor%}
+{%endblock%}
