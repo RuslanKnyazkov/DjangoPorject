@@ -2,6 +2,9 @@ from django.core.validators import FileExtensionValidator
 from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
+from django.utils.text import slugify
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 
 class Profile(models.Model):
@@ -29,10 +32,13 @@ class Profile(models.Model):
         """
         return self.user.username
 
-
     def get_absolute_url(self):
         return reverse('profile', kwargs={'user_id': self.user_id})
 
 
-
-
+@receiver(post_save, sender=User)
+def create_user_profile(sender, instance, created, **kwargs):
+    print(instance, sender, created, kwargs, sep='\n\n')
+    if created:
+        Profile.objects.create(user=instance, slug=slugify(instance.username),
+                               firstname=instance.first_name, lastname=instance.last_name)

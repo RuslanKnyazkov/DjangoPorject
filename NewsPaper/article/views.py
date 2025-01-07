@@ -20,7 +20,7 @@ class ArticleView(ListView):
 
 
 class ArticleCreated(PermissionRequiredMixin, CreateView):
-    permission_required = ('article.add_post')
+    permission_required = ('news.add_post')
     permission_denied_message = 'Вы не можете создавать статьи.'
     form_class = PostForm
     model = Post
@@ -34,13 +34,14 @@ class ArticleCreated(PermissionRequiredMixin, CreateView):
 
 
 class ArticleUpdate(PermissionRequiredMixin, UpdateView):
-    permission_required = ('article.change_post')
+    permission_required = ('news.change_post')
     model = Post
     form_class = PostForm
     template_name = 'update_article.html'
 
 
-class DeleteArticle(LoginRequiredMixin, DeleteView):
+class DeleteArticle(PermissionRequiredMixin, DeleteView):
+    permission_required = ('news.delete_post')
     model = Post
     success_url = reverse_lazy('post')
     template_name = 'delete_article.html'

@@ -1,14 +1,12 @@
-from django.urls import reverse_lazy
+from django.contrib.auth.models import User
+from django.shortcuts import redirect, get_object_or_404
+from django.urls import reverse_lazy, reverse
 from django.views.generic import (ListView, DetailView, CreateView,
                                   UpdateView, DeleteView)
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
-from django.contrib.auth.models import Group
 from .forms import PostForm
-from .models import Post, Comment, Author
+from .models import Post, Comment, Author, Category
 from .filters import PostFilter
-
-
-# Create your views here.
 
 
 class NewsView(ListView):
@@ -19,8 +17,28 @@ class NewsView(ListView):
     paginate_by = 10
 
     def get_context_data(self, *, object_list=None, **kwargs):
-        news = Post.objects.all().filter(choice_categories='news')
+        news = Post.objects.filter(choice_categories='news')
         context = super().get_context_data(object_list=news)
+        context['cat'] = Category.objects.all()
+        return context
+
+
+class NewsCategoryView(DetailView):
+    model = Post
+    template_name = 'news_category.html'
+    paginate_by = 5
+
+    def get_object(self, queryset=None):
+        return Category.objects.get(id=self.kwargs['pk'])
+
+    def get_queryset(self):
+        queryset = Post.objects.filter(test=self.object, choice_categories='news')
+        return queryset
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data()
+        context['queryset'] = self.get_queryset()
+        context['is_subscribe'] = self.object.subscribers.filter(id = self.request.user.id).exists()
         return context
 
 
@@ -79,7 +97,8 @@ class PostUpdate(PermissionRequiredMixin, UpdateView):
     template_name = 'update_post.html'
 
 
-class DeletePost(LoginRequiredMixin, DeleteView):
+class DeletePost(PermissionRequiredMixin, DeleteView):
+    permission_required = ('news.delete_post')
     model = Post
     success_url = reverse_lazy('post')
     template_name = 'delete_post.html'
@@ -93,5 +112,22 @@ class AuthorView(ListView):
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data()
         context['is_author'] = self.request.user.groups.filter(name='authors').exists()
-        print(context)
         return context
+
+
+def subscribe(request):
+    cat = request.POST['cat_id']
+
+    if request.method == 'POST':
+        subscribe = Category.objects.get(id=cat)
+        subscribe.subscribers.add(request.user)
+
+    return redirect('post')
+
+
+def unsubscribe(request):
+    cat = request.POST['cat_id']
+
+    if request.method == 'POST':
+        cat_subscribe = Category.objects.get(id = cat)
+        cat_subscribe.subscribers.filter()

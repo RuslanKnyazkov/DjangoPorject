@@ -6,11 +6,12 @@ from django.core.exceptions import ValidationError
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ['title', 'text_post']
+        fields = ['title', 'text_post', 'test']
         widgets = {
             'title': forms.TextInput(attrs={"class": "form-control", 'placeholder': "Default input",
                                             "aria-label": "default input example"}),
-            'text_post': forms.Textarea(attrs={'class': 'form-control', 'cols': 60})
+            'text_post': forms.Textarea(attrs={'class': 'form-control', 'cols': 60}),
+            'test' : forms.CheckboxSelectMultiple(attrs={'type': 'checkbox'})
         }
 
     def clean_title(self):

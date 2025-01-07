@@ -1,0 +1,35 @@
+{% extends 'news.html' %}
+{% load templtags %}
+{%block content%}
+
+<form action="{% url 'subscribe' %}" method="post">
+    {% csrf_token %}
+    <input type="hidden" name="cat_id" value="{{ object.id }}">
+
+    {% if is_subscribe %}
+        <button type="submit">Отписаться</button>
+    {% else %}
+        <button type="submit">Подписаться</button>
+    {% endif %}
+</form>
+
+{% if queryset is False %}
+Нет новостей
+{% else %}
+{% for query in queryset %}
+<div class="news_detail">
+
+    <h3>{{query.title | censor}}</h3>
+    <p>{{query.create_date| date:'M d Y'}}</p>
+    <p>{{query.text_post| truncatewords:24 | censor}}</p>
+    {{query.choice_categories}}
+    {% url 'single_news' query.pk as url %}
+    <a href="{{url}}">
+        <button class="btn btn-outline-info" type="submit">Подробнее</button>
+    </a>
+
+</div>
+
+{% endfor %}
+{% endif %}
+{% endblock%}

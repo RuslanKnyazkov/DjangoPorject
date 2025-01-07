@@ -2,7 +2,7 @@ from django.shortcuts import redirect, get_object_or_404
 from django.contrib.auth.models import Group
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from django.views.generic import DetailView
+from django.views.generic import DetailView, ListView
 from django.views.generic.edit import CreateView, UpdateView
 from .forms import BaseRegisterForm, BaseUserForm
 from django.shortcuts import render
@@ -20,9 +20,6 @@ class BaseRegisterView(CreateView):
                                     password=form.cleaned_data['password1'],
                                     )
             login(self.request, new_user)
-            Profile.objects.create(user=new_user, firstname=form.cleaned_data['first_name'],
-                                   lastname=form.cleaned_data['last_name'])
-
         return redirect('post')
 
 
@@ -49,6 +46,16 @@ class UpdateProfile(UpdateView):
         context = super().get_context_data()
         context['form'] = self.form_class(instance=self.object)
         return context
+
+class FollowerCategoryView(DetailView):
+    model = User
+    template_name = 'follower.html'
+    context_object_name = 'user'
+
+    def get_object(self, queryset=None):
+        user = get_object_or_404(User, id=self.request.user.id)
+        return user
+
 
 
 @login_required

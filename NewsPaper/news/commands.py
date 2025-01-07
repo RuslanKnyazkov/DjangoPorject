@@ -4,8 +4,8 @@ from django.contrib.auth.models import User
 user1 = User.objects.create_user('Валентин')
 user2 = User.objects.create_user('Леонид')
 
-author1 = Author.objects.create(name=user1)
-author2 = Author.objects.create(name=user2)
+author1 = Author.objects.get(name='Валентин')
+author2 = Author.objects.create(name="Леонид")
 
 category1 = Category.objects.create(name_categories='спорт')
 category2 = Category.objects.create(name_categories='образование')
@@ -27,7 +27,7 @@ article2 = Post.objects.create(author_post=author2, choice_categories='article',
                                          ' в системах с фиксированным курсом валюты,'
                                          ' устанавливаемым денежными властями.')
 
-news = Post.objects.create(author_post=Author.objects.get(id=8),
+news = Post.objects.create(author_post=Author.objects.get(name_id=3),
                            choice_categories='news', title='Игры будущего в Казани',
                            text_post='В октябре 2023 года в Казани прошли международные игры'
                                      ' «Фиджитал лайв» в формате турнира «Игры будущего».'

@@ -31,10 +31,14 @@ class Category(models.Model):
     ]
     name_categories = models.CharField(max_length=11,
                                        choices=NAME_CATEGORIES, default='образование')
+    subscribers = models.ManyToManyField(User, default=None, through='CategorySubscribers')
 
     def __str__(self):
         return f'{self.name_categories}'
 
+class CategorySubscribers(models.Model):
+    category = models.ForeignKey(to=Category, on_delete=models.CASCADE)
+    user = models.ForeignKey(to=User, on_delete=models.CASCADE)
 
 class Post(models.Model):
     NAME_POST = [
@@ -51,7 +55,7 @@ class Post(models.Model):
                                          choices=NAME_POST,
                                          default='news')
 
-    test = models.ManyToManyField(Category, through='PostCategory')
+    test = models.ManyToManyField(Category, through='PostCategory', verbose_name='Категория')
     title = models.CharField(max_length=255, unique=True, verbose_name='Заголовок')
     text_post = models.TextField(verbose_name='Текст')
     rating_post = models.IntegerField(default=0, db_column='rating_post')
@@ -103,3 +107,33 @@ class Comment(models.Model):  # completed
         else:
             self.rating_comment -= 1
             self.save()
+
+
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+
+from django.core.mail import send_mail, EmailMultiAlternatives
+from django.template.loader import render_to_string
+
+
+@receiver(post_save, sender=Post)
+def foo(sender, created, instance, **kwargs):
+    if created:
+        post = Post.objects.all().order_by('-create_date')[1]
+        for cat in post.test.all():
+            print(cat, post.title, post.create_date)
+            users = User.objects.filter(category=cat)
+            for user in users:
+                html_content = render_to_string(
+                    'notification.html',
+                    {'user': user, 'post': post, 'cat' : cat}
+                )
+                mail_content = EmailMultiAlternatives(
+                    subject=f'{user.username}',
+                    body=f'В разделе {cat} появилась новая запись',
+                    from_email='rus.knyazkov.94@mail.ru',
+                    to=[f'{user.email}']
+                )
+                mail_content.attach_alternative(html_content,
+                                                'text/html')
+                mail_content.send()

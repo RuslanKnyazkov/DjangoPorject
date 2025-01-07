@@ -12,7 +12,6 @@
     <a href="{{url}}">
         <button class="button" type="submit">Назад</button>
     </a>
-    {%if request.user.id == news.author_post_id %} {# проверка является ли пользователем владельца поста #}
         </a>
         {% if news.choice_categories == "news" %}
         <a href="{% url 'update_news' news.pk %}">
@@ -29,7 +28,6 @@
             <button class="button" type="submit">Удалить</button>
         </a>
         {% endif %}
-    {% endif %}
 </div>
 
 

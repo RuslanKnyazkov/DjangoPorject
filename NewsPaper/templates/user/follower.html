@@ -1,0 +1,8 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<h2>Ваши подписки по категориям</h2>
+{% for cat in user.subscribes.subscribe.all %}
+{{ cat }}
+{% endfor %}
+{% endblock %}
