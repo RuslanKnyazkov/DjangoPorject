@@ -39,9 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'django_filters',
+    'django_apscheduler',
     'debug_toolbar',
-    'signin',
-    'news',
+    'signin.apps.SigninConfig',
+    'news.apps.NewsConfig',
     'article',
     'allauth',
     'allauth.account',
@@ -74,7 +75,8 @@ TEMPLATES = [
                  path.join(BASE_DIR, 'templates/news'),
                  path.join(BASE_DIR, 'templates/article'),
                  path.join(BASE_DIR, 'templates/author'),
-                 path.join(BASE_DIR, 'templates/user')],
+                 path.join(BASE_DIR, 'templates/user'),
+                 path.join(BASE_DIR, 'templates/accounts/email/')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -133,7 +135,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Moscow'
 
 USE_I18N = True
 
@@ -159,7 +161,7 @@ CACHES = {
 
 LOGIN_URL = 'accounts/login'
 LOGIN_REDIRECT_URL = 'post'
-LOGOUT_REDIRECT_URL = '/'
+
 
 AUTHENTICATION_BACKENDS = [
     # Needed to login by username in Django admin, regardless of `allauth`
@@ -168,6 +170,8 @@ AUTHENTICATION_BACKENDS = [
     # `allauth` specific authentication methods, such as login by e-mail
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
+
+# Account setting
 
 ACCOUNT_FORMS = {'signup': 'signin.forms.BasicSignupForm'}
 
@@ -179,12 +183,20 @@ ACCOUNT_EMAIL_VERIFICATION = 'optional'
 
 SITE_ID = 1
 
-EMAIL_HOST = 'smtp.mail.ru'  # адрес сервера Яндекс-почты для всех один и тот же
-EMAIL_PORT = 2525  # порт smtp сервера тоже одинаковый
-EMAIL_HOST_USER = 'rus.knyazkov.94@mail.ru'  # ваше имя пользователя, например, если ваша почта user@yandex.ru, то сюда надо писать user, иными словами, это всё то что идёт до собаки
-EMAIL_HOST_PASSWORD = 'PQwBg0QfbgxtRdz0uyWz'  # пароль от почты
+# Email setting
+
+EMAIL_HOST = 'smtp.mail.ru'
+EMAIL_PORT = 2525
+EMAIL_HOST_USER = 'rus.knyazkov.94@mail.ru'
+EMAIL_HOST_PASSWORD = 'PQwBg0QfbgxtRdz0uyWz'
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 SERVER_EMAIL = EMAIL_HOST_USER
 EMAIL_ADMIN = EMAIL_HOST_USER
+
+
+# Apsceduler
+
+APSCHEDULER_DATETIME_FORMAT = "N j, Y, f:s a"
+APSCHEDULER_RUN_NOW_TIMEOUT = 25

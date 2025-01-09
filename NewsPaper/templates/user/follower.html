@@ -2,7 +2,13 @@
 
 {% block content %}
 <h2>Ваши подписки по категориям</h2>
-{% for cat in user.subscribes.subscribe.all %}
-{{ cat }}
+
+{% for cat in user.category_set.all %}
+<ul>
+    <li>
+        {{ cat }}
+    </li>
+</ul>
+
 {% endfor %}
 {% endblock %}

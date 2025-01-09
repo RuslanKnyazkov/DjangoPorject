@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Список новых статей для {{user.usename}}</title>
+</head>
+<body>
+{% for post in posts %}
+<ul>
+    <li>
+        <h5>{{post.title}}</h5>
+    </li>
+    <li>
+        <p1>{{post.preview}}</p1>
+    </li>
+        <a href="http://127.0.0.1:8000/news/{{post.pk}}/">Перейти к статье</a>
+</ul>
+{% endfor %}
+
+</body>
+</html>

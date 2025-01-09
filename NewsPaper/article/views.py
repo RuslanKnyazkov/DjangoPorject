@@ -1,21 +1,22 @@
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, UpdateView, DeleteView, ListView
-
+from news.mixin import CategoryMixin
 from news.models import Post, Author
 from news.forms import PostForm
 
 
-class ArticleView(ListView):
+class ArticleView(CategoryMixin, ListView):
     model = Post
     template_name = 'news.html'
     context_object_name = 'news'
     ordering = '-create_date'
     paginate_by = 10
+    queryset = Post.objects.all().filter(choice_categories='article')
 
     def get_context_data(self, *, object_list=None, **kwargs):
-        news = Post.objects.all().filter(choice_categories='article')
-        context = super().get_context_data(object_list=news)
+        context = super().get_context_data()
+        context['cat'] = self.get_category()
         return context
 
 
@@ -27,7 +28,7 @@ class ArticleCreated(PermissionRequiredMixin, CreateView):
     template_name = 'create_article.html'
 
     def form_valid(self, form):
-        form.instance.author_post = Author.objects.get(id=self.request.user.id)
+        form.instance.author_post = Author.objects.get(name_id=self.request.user.id)
         test = form.save(commit=False)
         test.choice_categories = 'article'
         return super().form_valid(form)

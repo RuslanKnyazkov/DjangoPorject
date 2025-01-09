@@ -1,11 +1,12 @@
-from models import Author, Post, Comment, Category, PostCategory
+from news.models import Author, Post, Comment, Category, PostCategory
 from django.contrib.auth.models import User
 
 user1 = User.objects.create_user('Валентин')
 user2 = User.objects.create_user('Леонид')
 
 author1 = Author.objects.get(name='Валентин')
-author2 = Author.objects.create(name="Леонид")
+author2 = Author.objects.get(name="Леонид")
+author3 = Author.objects.get(name="ruslan")
 
 category1 = Category.objects.create(name_categories='спорт')
 category2 = Category.objects.create(name_categories='образование')

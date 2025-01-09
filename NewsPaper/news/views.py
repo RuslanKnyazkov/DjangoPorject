@@ -1,29 +1,29 @@
-from django.contrib.auth.models import User
-from django.shortcuts import redirect, get_object_or_404
-from django.urls import reverse_lazy, reverse
+from django.shortcuts import redirect
+from django.urls import reverse_lazy
 from django.views.generic import (ListView, DetailView, CreateView,
                                   UpdateView, DeleteView)
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from .forms import PostForm
 from .models import Post, Comment, Author, Category
 from .filters import PostFilter
+from .mixin import AuthorMixin, CategoryMixin
 
-
-class NewsView(ListView):
+class NewsView(CategoryMixin, ListView):
     model = Post
     template_name = 'news.html'
     context_object_name = 'news'
     ordering = '-create_date'
     paginate_by = 10
+    queryset = Post.objects.filter(choice_categories='news')
+
 
     def get_context_data(self, *, object_list=None, **kwargs):
-        news = Post.objects.filter(choice_categories='news')
-        context = super().get_context_data(object_list=news)
-        context['cat'] = Category.objects.all()
+        context = super().get_context_data()
+        context['cat'] = self.get_category()
         return context
 
 
-class NewsCategoryView(DetailView):
+class NewsCategoryView(CategoryMixin, DetailView):
     model = Post
     template_name = 'news_category.html'
     paginate_by = 5
@@ -32,13 +32,14 @@ class NewsCategoryView(DetailView):
         return Category.objects.get(id=self.kwargs['pk'])
 
     def get_queryset(self):
-        queryset = Post.objects.filter(test=self.object, choice_categories='news')
+        queryset = Post.objects.filter(test=self.object)
         return queryset
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data()
         context['queryset'] = self.get_queryset()
         context['is_subscribe'] = self.object.subscribers.filter(id = self.request.user.id).exists()
+        context['cat'] = self.get_category()
         return context
 
 
@@ -72,21 +73,21 @@ class DetailNews(DetailView):
         return context
 
 
-class NewsCreated(PermissionRequiredMixin, CreateView):
+class NewsCreated(PermissionRequiredMixin, AuthorMixin, CreateView):
     permission_required = ('news.add_post')
     form_class = PostForm
     model = Post
     template_name = 'create_post.html'
 
     def form_valid(self, form):
-        form.instance.author_post = Author.objects.get(id=self.request.user.id)
+        form.instance.author_post = Author.objects.get(name_id=self.request.user.id)
         form.save(commit=False)
         form.choice_categories = 'news'
         return super().form_valid(form)
 
     def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['user'] = self.request.user
+        context = super().get_context_data()
+        context['create'] = self.check_created(self.request)
         return context
 
 
@@ -117,17 +118,14 @@ class AuthorView(ListView):
 
 def subscribe(request):
     cat = request.POST['cat_id']
+    task = request.POST['task']
 
     if request.method == 'POST':
-        subscribe = Category.objects.get(id=cat)
-        subscribe.subscribers.add(request.user)
+        if task == 'sub':
+            subscribe = Category.objects.get(id=cat)
+            subscribe.subscribers.add(request.user)
+        else:
+            cat_subscribe = request.user.categorysubscribers_set.get(category_id=cat)
+            cat_subscribe.delete()
 
     return redirect('post')
-
-
-def unsubscribe(request):
-    cat = request.POST['cat_id']
-
-    if request.method == 'POST':
-        cat_subscribe = Category.objects.get(id = cat)
-        cat_subscribe.subscribers.filter()

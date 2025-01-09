@@ -52,6 +52,7 @@ class FollowerCategoryView(DetailView):
     template_name = 'follower.html'
     context_object_name = 'user'
 
+
     def get_object(self, queryset=None):
         user = get_object_or_404(User, id=self.request.user.id)
         return user

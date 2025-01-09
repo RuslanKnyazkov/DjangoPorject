@@ -5,9 +5,9 @@
     <title>{{ post.title }}</title>
 </head>
 <body>
-<h2>Привет {{user}}. В категории {{cat}} появилась новая запись.</h2>
+<h2>Здравствуй, {{user}}. В категории {{cat}} появилась новая запись.</h2>
 <hr>
 <a href="http://127.0.0.1:8000/news/{{post.id}}">Перейти по ссылки</a>
-<p1>{{ post.text_post }}</p1>
+<p1>{{ post.text_post | truncatechars:50 }}</p1>
 </body>
 </html>

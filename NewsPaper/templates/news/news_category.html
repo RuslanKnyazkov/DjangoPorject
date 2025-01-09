@@ -7,10 +7,17 @@
     <input type="hidden" name="cat_id" value="{{ object.id }}">
 
     {% if is_subscribe %}
+        <input type="hidden" name="task" value="unsub">
         <button type="submit">Отписаться</button>
     {% else %}
-        <button type="submit">Подписаться</button>
+        <input type="hidden" name="task" value="sub">
+        <button type="submit" onclick="getcontent()">Подписаться</button>
     {% endif %}
+    {% load static %}
+
+    <script src="{% static 'js/js.js'%}">
+        document.getElementById('myButton').onclick = getcontent;
+    </script>
 </form>
 
 {% if queryset is False %}
@@ -22,7 +29,7 @@
     <h3>{{query.title | censor}}</h3>
     <p>{{query.create_date| date:'M d Y'}}</p>
     <p>{{query.text_post| truncatewords:24 | censor}}</p>
-    {{query.choice_categories}}
+    {{query}}
     {% url 'single_news' query.pk as url %}
     <a href="{{url}}">
         <button class="btn btn-outline-info" type="submit">Подробнее</button>

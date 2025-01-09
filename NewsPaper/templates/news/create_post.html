@@ -1,13 +1,16 @@
 {% extends 'index.html' %}
 
 {% block content %}
-{% if user %}
 
+{% if create %}
 <form method="post" class="form_class">
     {% csrf_token %}
     {{ form.as_p}}
     <button type="submit"> Сохранить</button>
 </form>
-
+{% else %}
+<p1>Вы превысили допустимое кол-во публикаций за сегодня</p1>
 {% endif %}
+
+
 {% endblock %}
