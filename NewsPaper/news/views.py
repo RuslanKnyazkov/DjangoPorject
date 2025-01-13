@@ -1,12 +1,14 @@
-from django.shortcuts import redirect
+
 from django.urls import reverse_lazy
+from django.views import View
 from django.views.generic import (ListView, DetailView, CreateView,
                                   UpdateView, DeleteView)
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from .forms import PostForm
-from .models import Post, Comment, Author, Category
+from .models import Post, Comment, Author, Category, CategorySubscribers
 from .filters import PostFilter
 from .mixin import AuthorMixin, CategoryMixin
+
 
 class NewsView(CategoryMixin, ListView):
     model = Post
@@ -15,7 +17,6 @@ class NewsView(CategoryMixin, ListView):
     ordering = '-create_date'
     paginate_by = 10
     queryset = Post.objects.filter(choice_categories='news')
-
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data()
@@ -38,7 +39,7 @@ class NewsCategoryView(CategoryMixin, DetailView):
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data()
         context['queryset'] = self.get_queryset()
-        context['is_subscribe'] = self.object.subscribers.filter(id = self.request.user.id).exists()
+        context['is_subscribe'] = self.object.subscribers.filter(id=self.request.user.id).exists()
         context['cat'] = self.get_category()
         return context
 
@@ -116,16 +117,26 @@ class AuthorView(ListView):
         return context
 
 
-def subscribe(request):
-    cat = request.POST['cat_id']
-    task = request.POST['task']
+from django.views.decorators.csrf import csrf_exempt
+from django.http import JsonResponse
 
+
+
+
+
+@csrf_exempt
+def subscribe(request):
     if request.method == 'POST':
-        if task == 'sub':
-            subscribe = Category.objects.get(id=cat)
+        category_id = int(request.POST.get('cat_id'))
+        if not request.user.categorysubscribers_set.filter(category_id=category_id).exists():
+            subscribe = Category.objects.get(id=category_id)
             subscribe.subscribers.add(request.user)
         else:
-            cat_subscribe = request.user.categorysubscribers_set.get(category_id=cat)
+            cat_subscribe = request.user.categorysubscribers_set.get(category_id=category_id)
             cat_subscribe.delete()
+        return JsonResponse(data={'user': request.user.username})
 
-    return redirect('post')
+    if request.method == 'GET':
+        sub_or_not = request.user.categorysubscribers_set.all().values()
+        return JsonResponse(data={'all_subscribe_category': list(sub_or_not)
+                                  })

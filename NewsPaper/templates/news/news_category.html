@@ -1,35 +1,20 @@
-{% extends 'news.html' %}
+{% extends 'index.html' %}
 {% load templtags %}
 {%block content%}
+{% load static %}
 
-<form action="{% url 'subscribe' %}" method="post">
-    {% csrf_token %}
-    <input type="hidden" name="cat_id" value="{{ object.id }}">
+<button id="btn_sub" name="">Подписаться</button>
 
-    {% if is_subscribe %}
-        <input type="hidden" name="task" value="unsub">
-        <button type="submit">Отписаться</button>
-    {% else %}
-        <input type="hidden" name="task" value="sub">
-        <button type="submit" onclick="getcontent()">Подписаться</button>
-    {% endif %}
-    {% load static %}
-
-    <script src="{% static 'js/js.js'%}">
-        document.getElementById('myButton').onclick = getcontent;
-    </script>
-</form>
 
 {% if queryset is False %}
 Нет новостей
 {% else %}
 {% for query in queryset %}
-<div class="news_detail">
+<div class="news_detail" id="news_id">
 
     <h3>{{query.title | censor}}</h3>
     <p>{{query.create_date| date:'M d Y'}}</p>
     <p>{{query.text_post| truncatewords:24 | censor}}</p>
-    {{query}}
     {% url 'single_news' query.pk as url %}
     <a href="{{url}}">
         <button class="btn btn-outline-info" type="submit">Подробнее</button>
@@ -39,4 +24,53 @@
 
 {% endfor %}
 {% endif %}
+{% endblock%}
+
+{% block script %}
+
+
+<script>
+const subChecker = () => {
+    $.ajax({
+        type : 'GET',
+        url: `/news/subscribe/`,
+        success : function(response){
+            console.log(response)
+            const subscribe_category = response.all_subscribe_category
+            const button = document.getElementById('btn_sub')
+            if (subscribe_category.map === null){console.log('null')}
+            subscribe_category.map( cat_id  => {
+                if (cat_id.category_id === {{object.id}}) {
+                    button.style.background = 'yellow'
+                    button.innerHTML = 'Вы подписаны'
+                    console.log(true)
+                    }
+                else {
+                      button.style.background = 'green'
+                      button.innerHTML = 'Подписаться'
+                      console.log(false)
+                    }})
+            }
+
+    })}
+
+subChecker()
+
+
+document.addEventListener('DOMContentLoaded', () => {
+
+const button = document.getElementById('btn_sub');
+
+button.addEventListener('click', () =>
+{
+        $.post( `{% url 'subscribe' %}` ,
+        {'cat_id': {{object.id}},'status': 'button.text'})
+        subChecker()
+    })
+    })
+
+
+
+</script>
+
 {% endblock%}

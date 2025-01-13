@@ -1,7 +1,8 @@
 from django.urls import path
 from .views import (NewsView, DetailNews, NewsCreated,
                     PostSearchView, PostUpdate, DeletePost,
-                    AuthorView, subscribe, NewsCategoryView)
+                    AuthorView, subscribe, NewsCategoryView,
+                )
 from django.views.decorators.cache import cache_page
 
 
@@ -14,5 +15,5 @@ urlpatterns = [
     path('delete/<int:pk>/', DeletePost.as_view(), name='delete_post'),
     path('update/<int:pk>/', PostUpdate.as_view(), name='update_news'),
     path('author/', AuthorView.as_view(), name='show_authors'),
-    path('subscribe/', subscribe, name='subscribe')
+    path('subscribe/', subscribe, name='subscribe'),
 ]
