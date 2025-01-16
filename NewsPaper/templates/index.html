@@ -8,6 +8,7 @@
     <title>Django Web</title>
 
     {% load static %}
+    {% load cache %}
     <link href="{%static 'css/self.css'%}" rel="stylesheet">
     <link href="{%static 'css/styles.css'%}" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -20,7 +21,8 @@
 </head>
 <body>
 <!-- Responsive navbar-->
-
+{% cache 60 nav %}
+{% block nav %}
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">DjangoWeb</a>
@@ -74,16 +76,18 @@
         </div>
     </div>
 </nav>
-
-
+{% endblock %}
+{% endcache %}
 <!-- Page content-->
 
 <div class="container-content">
     <div class="side">
-        {%block side%}{% endblock %}
+        {%block side%}
+        {% endblock %}
     </div>
     <div class="content">
-        {%block content%}{%endblock%}
+        {%block content%}
+        {%endblock%}
     </div>
 </div>
 {% block script %}

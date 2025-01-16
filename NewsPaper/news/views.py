@@ -1,13 +1,14 @@
-
+from django.core.cache import cache
+from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.urls import reverse_lazy
 from django.views import View
 from django.views.generic import (ListView, DetailView, CreateView,
                                   UpdateView, DeleteView)
-from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
-from .forms import PostForm
-from .models import Post, Comment, Author, Category, CategorySubscribers
+
 from .filters import PostFilter
+from .forms import PostForm
 from .mixin import AuthorMixin, CategoryMixin
+from .models import Post, Comment, Author, Category
 
 
 class NewsView(CategoryMixin, ListView):
@@ -67,6 +68,15 @@ class DetailNews(DetailView):
     template_name = 'single_news.html'
     context_object_name = 'news'
 
+    def get_object(self, queryset=None):
+        obj = cache.get(f'news-{self.kwargs['pk']}', None)
+
+        if not obj:
+            obj = super().get_object(queryset=self.queryset)
+            cache.set(f'news-{self.kwargs["pk"]}', obj)
+
+        return obj
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['comments'] = Comment.objects.filter(
@@ -121,9 +131,6 @@ from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 
 
-
-
-
 @csrf_exempt
 def subscribe(request):
     if request.method == 'POST':
@@ -134,9 +141,16 @@ def subscribe(request):
         else:
             cat_subscribe = request.user.categorysubscribers_set.get(category_id=category_id)
             cat_subscribe.delete()
-        return JsonResponse(data={'user': request.user.username})
+
+        return JsonResponse(data={'user': request.user.username,
+                                  'status': request.user.categorysubscribers_set.filter(category_id=category_id
+                                                                                        ).exists(),
+                                  })
 
     if request.method == 'GET':
         sub_or_not = request.user.categorysubscribers_set.all().values()
         return JsonResponse(data={'all_subscribe_category': list(sub_or_not)
                                   })
+
+    class TestView(View):
+        pass

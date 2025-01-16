@@ -1,24 +1,30 @@
 {% extends 'index.html'%}
 {% load templtags %}
-{% csrf_token %}
 {%block title%}News{%endblock%}
+{% load cache %}
 
+{% cache 60 side%}
 {%block side %}
 <ul>
     <h6>Категории</h6>
-    {% for i in cat %}
-    <a href="{% url 'category_news' i.id %}"><li>{{i}}</li></a>
-    {% endfor %}
+    <ul>
+        {% for i in cat %}
+        <a href="{% url 'category_news' i.id %}">
+            <li>{{i}}</li>
+        </a>
+        {% endfor %}
+    </ul>
+
 </ul>
 {% endblock %}
+{% endcache%}
+
 
 {%block content%}
 
 <h1>Колличество новостей {{news|length}}</h1>
 {%for n in news%}
-
 <div class="news_detail">
-
     <h3>{{n.title | censor}}</h3>
     <p>{{n.create_date| date:'M d Y'}}</p>
     <p>{{n.text_post| truncatewords:24 | censor}}</p>
@@ -26,12 +32,10 @@
     <a href="{{url}}">
         <button class="btn btn-outline-info" type="submit">Подробнее</button>
     </a>
-
 </div>
 
 {%endfor%}
 
-{# Информация о предыдущих страницах #}
 {% if page_obj.has_previous %}
 <a href="?{% url_replace page=1 %}">1</a>
 {% if page_obj.previous_page_number != 1 %}
@@ -40,10 +44,8 @@
 {% endif %}
 {% endif %}
 
-{# Информация о текущей странице #}
 {{ page_obj.number }}
 
-{# Информация о следующих страницах #}
 {% if page_obj.has_next %}
 <a href="?{% url_replace page=page_obj.next_page_number %}">{{ page_obj.next_page_number }}</a>
 {% if paginator.num_pages != page_obj.next_page_number %}
@@ -51,6 +53,5 @@
 <a href="?{% url_replace page=page_obj.paginator.num_pages %}">{{ page_obj.paginator.num_pages }}</a>
 {% endif %}
 {% endif %}
-
 
 {%endblock%}

@@ -1,7 +1,9 @@
 {% extends 'index.html' %}
 
 {% load templtags %}
+{% load cache %}
 
+{% cache 60 side %}
 {% block side %}
 <form action="" method="get">
 
@@ -14,6 +16,7 @@
     <button type="submit" class="btn btn-success rounded-pill px-3">Найти</button>
 </form>
 {% endblock %}
+{% endcache %}
 
 
 {% block content %}

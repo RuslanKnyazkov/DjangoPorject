@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models import Sum
 from django.urls import reverse
-
+from django.core.cache import cache
 
 class Author(models.Model):
     name = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -65,6 +65,11 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         return reverse('single_news', kwargs={"pk": self.pk})
+
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        cache.delete(self.get_absolute_url())
 
     def preview(self):
         return f'{self.text_post[:124]}...'
