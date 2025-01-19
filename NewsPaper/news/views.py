@@ -1,48 +1,32 @@
 from django.core.cache import cache
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.urls import reverse_lazy
-from django.views import View
 from django.views.generic import (ListView, DetailView, CreateView,
                                   UpdateView, DeleteView)
 
 from .filters import PostFilter
 from .forms import PostForm
-from .mixin import AuthorMixin, CategoryMixin
+from .mixin import (AuthorMixin, PostMixin,
+                    SingleCategoryPostView)
 from .models import Post, Comment, Author, Category
 
 
-class NewsView(CategoryMixin, ListView):
-    model = Post
+class NewsView(PostMixin):
     template_name = 'news.html'
-    context_object_name = 'news'
-    ordering = '-create_date'
-    paginate_by = 10
     queryset = Post.objects.filter(choice_categories='news')
 
-    def get_context_data(self, *, object_list=None, **kwargs):
-        context = super().get_context_data()
-        context['cat'] = self.get_category()
-        return context
+
+class ArticleView(PostMixin):
+    template_name = 'article.html'
+    queryset = Post.objects.filter(choice_categories='article')
 
 
-class NewsCategoryView(CategoryMixin, DetailView):
-    model = Post
+class NewsCategoryView(SingleCategoryPostView):
     template_name = 'news_category.html'
-    paginate_by = 5
 
-    def get_object(self, queryset=None):
-        return Category.objects.get(id=self.kwargs['pk'])
 
-    def get_queryset(self):
-        queryset = Post.objects.filter(test=self.object)
-        return queryset
-
-    def get_context_data(self, *, object_list=None, **kwargs):
-        context = super().get_context_data()
-        context['queryset'] = self.get_queryset()
-        context['is_subscribe'] = self.object.subscribers.filter(id=self.request.user.id).exists()
-        context['cat'] = self.get_category()
-        return context
+class ArticleCategoryView(SingleCategoryPostView):
+    template_name = 'article_category.html'
 
 
 class PostSearchView(ListView):
@@ -102,6 +86,20 @@ class NewsCreated(PermissionRequiredMixin, AuthorMixin, CreateView):
         return context
 
 
+class ActicleCreated(PermissionRequiredMixin, CreateView):
+    permission_required = ('news.add_post')
+    permission_denied_message = 'Вы не можете создавать статьи.'
+    form_class = PostForm
+    model = Post
+    template_name = 'create_article.html'
+
+    def form_valid(self, form):
+        form.instance.author_post = Author.objects.get(name_id=self.request.user.id)
+        test = form.save(commit=False)
+        test.choice_categories = 'article'
+        return super().form_valid(form)
+
+
 class PostUpdate(PermissionRequiredMixin, UpdateView):
     permission_required = ('news.change_post')
     model = Post
@@ -114,6 +112,20 @@ class DeletePost(PermissionRequiredMixin, DeleteView):
     model = Post
     success_url = reverse_lazy('post')
     template_name = 'delete_post.html'
+
+
+class ArticleUpdate(PermissionRequiredMixin, UpdateView):
+    permission_required = ('news.change_post')
+    model = Post
+    form_class = PostForm
+    template_name = 'update_article.html'
+
+
+class DeleteArticle(PermissionRequiredMixin, DeleteView):
+    permission_required = ('news.delete_post')
+    model = Post
+    success_url = reverse_lazy('post')
+    template_name = 'delete_article.html'
 
 
 class AuthorView(ListView):
@@ -149,8 +161,6 @@ def subscribe(request):
 
     if request.method == 'GET':
         sub_or_not = request.user.categorysubscribers_set.all().values()
-        return JsonResponse(data={'all_subscribe_category': list(sub_or_not)
-                                  })
+        return JsonResponse(data={'all_subscribe_category': list(sub_or_not),
+                                  'user_id': request.user.id})
 
-    class TestView(View):
-        pass

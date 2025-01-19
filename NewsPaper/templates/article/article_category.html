@@ -1,14 +1,9 @@
-{% extends 'news.html' %}
+{% extends 'article.html' %}
 {% load templtags %}
 {%block content%}
 {% load static %}
 
-<div class="sub-div" >
-    <div id="sub_id" class="hidden-sub-div">
-        <button id="btn_sub" name="" value="{{cat_id.id}}" class="btn btn-primary">Подписаться</button>
-    </div>
-</div>
-
+<button id="btn_sub" name="">Подписаться</button>
 
 
 {% for query in queryset %}
@@ -35,12 +30,5 @@
     </div>
   </div>
 </div>
-
-{% endblock%}
-
-
-
-{% block script %}
-<script src="{% static 'js/js.js'%}"></script>
 
 {% endblock%}

@@ -23,8 +23,8 @@ from .view import home_page
 urlpatterns = [
     path('', home_page, name = 'home'),
     path('admin/', admin.site.urls),
-    path('article/', include('article.urls')),
-    path('news/', include('news.urls')),
+    #path('article/', include('article.urls')),
+    path('post/', include('news.urls')),
     path('user/', include('signin.urls')),
     path('accounts/', include('allauth.urls')),
 

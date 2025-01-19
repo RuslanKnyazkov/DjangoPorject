@@ -1,36 +1,25 @@
 {% extends 'index.html'%}
 {% load templtags %}
-{%block title%}News{%endblock%}
-{% load cache %}
 
-{% cache 60 side%}
-{%block side %}
-    <h6>Категории</h6>
-    <ul>
-        {% for i in cat %}
-        <a href="{% url 'category_news' 'news' i.id %}"><li>{{i}}</li></a>
-        {% endfor %}
-    </ul>
-{% endblock %}
-{% endcache%}
+{%block side %}{% endblock %}
+
+
+
 
 
 {%block content%}
 
-<h1>Колличество новостей {{news|length}}</h1>
-{%for n in news%}
-<div class="news_detail">
-    <h3>{{n.title | censor}}</h3>
-    <p>{{n.create_date| date:'M d Y'}}</p>
-    <p>{{n.text_post| truncatewords:24 | censor}}</p>
-    <p>{{n.choice_categories}}</p>
-    {% url 'single_post' n.pk as url %}
+{% for query in queryset %}
+<div class="news_detail" id="news_id">
+    <h3>{{query.title | censor}}</h3>
+    <p>{{query.create_date| date:'M d Y'}}</p>
+    <p>{{query.text_post| truncatewords:24 | censor}}</p>
+    {% url 'single_news' query.pk as url %}
     <a href="{{url}}">
         <button class="btn btn-outline-info" type="submit">Подробнее</button>
     </a>
 </div>
-
-{%endfor%}
+{% endfor %}
 
 
 {% if page_obj.has_previous %}
@@ -50,4 +39,5 @@
 <a href="?{% url_replace page=page_obj.paginator.num_pages %}">{{ page_obj.paginator.num_pages }}</a>
 {% endif %}
 {% endif %}
-{% endblock %}
+
+{%endblock%}

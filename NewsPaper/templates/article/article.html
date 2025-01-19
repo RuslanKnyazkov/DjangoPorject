@@ -1,0 +1,19 @@
+{% extends 'index.html'%}
+{% load cache %}
+
+
+{% cache 60 side%}
+{%block side %}
+<ul>
+    <h6>Категории</h6>
+    <ul>
+        {% for i in cat %}
+        <a href="{% url 'category_article' 'article' i.id %}">
+            <li>{{i}}</li>
+        </a>
+        {% endfor %}
+    </ul>
+
+</ul>
+{% endblock %}
+{% endcache%}
