@@ -1,15 +1,19 @@
 from django.core.cache import cache
 from django.contrib.auth.mixins import PermissionRequiredMixin
+from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic import (ListView, DetailView, CreateView,
-                                  UpdateView, DeleteView)
-
+from django.views.generic import (ListView, DetailView,
+                                  CreateView,UpdateView, DeleteView)
 from .filters import PostFilter
 from .forms import PostForm
 from .mixin import (AuthorMixin, PostMixin,
                     SingleCategoryPostView)
 from .models import Post, Comment, Author, Category
 
+def get_top_rating_post(request):
+    """ Simple function for render top post on rating. """
+    top_post = Post.objects.all().order_by("-rating_post")[:10]
+    return render(request, template_name='base.html', context={'top': top_post})
 
 class NewsView(PostMixin):
     template_name = 'news.html'

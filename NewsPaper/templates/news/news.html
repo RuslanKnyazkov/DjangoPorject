@@ -1,16 +1,19 @@
 {% extends 'index.html'%}
 {% load templtags %}
+{% load static %}
 {%block title%}News{%endblock%}
 {% load cache %}
 
 {% cache 60 side%}
 {%block side %}
-    <h6>Категории</h6>
-    <ul>
-        {% for i in cat %}
-        <a href="{% url 'category_news' 'news' i.id %}"><li>{{i}}</li></a>
-        {% endfor %}
-    </ul>
+<h6>Категории</h6>
+<ul>
+    {% for i in cat %}
+    <a href="{% url 'category_news' 'news' i.id %}">
+        <li>{{i}}</li>
+    </a>
+    {% endfor %}
+</ul>
 {% endblock %}
 {% endcache%}
 
@@ -20,10 +23,16 @@
 <h1>Колличество новостей {{news|length}}</h1>
 {%for n in news%}
 <div class="news_detail">
-    <h3>{{n.title | censor}}</h3>
-    <p>{{n.create_date| date:'M d Y'}}</p>
-    <p>{{n.text_post| truncatewords:24 | censor}}</p>
-    <p>{{n.choice_categories}}</p>
+    <div class="post-items">
+        <img src="{% static 'images/post items/icon comment.png'%}" alt="" width="20" height="20">{{n.tests|length}}
+        <img src="{% static 'images/post items/icon rating.png'%}" alt="" width="20" height="20">{{n.rating_post}}
+    </div>
+    <div class="post-info-items">
+        <h3>{{n.title | censor}}</h3>
+        <p>{{n.text_post| truncatewords:24 | censor}}</p>
+        <p>{{n.create_date| date:'M d Y'}}</p>
+    </div>
+
     {% url 'single_post' n.pk as url %}
     <a href="{{url}}">
         <button class="btn btn-outline-info" type="submit">Подробнее</button>
@@ -51,3 +60,7 @@
 {% endif %}
 {% endif %}
 {% endblock %}
+
+{%block script%}
+<script src="{% static 'js/js.js'%}"></script>
+{% endblock%}

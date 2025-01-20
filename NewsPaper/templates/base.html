@@ -4,4 +4,23 @@
 
 {%block content%}
 
+
+<div class="items-wrap">
+        <div class="items marquee">
+            {% for post in top %}
+            <div class="item">
+                <div>
+                    <img src="{{post.author_post.name.profile.get_avatar}}" alt="" width="100">
+                </div>
+                <div>
+                    {{post.author_post}}
+                    {{post}}
+                    {{post.text_post| truncatewords:6}}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
 {% endblock %}

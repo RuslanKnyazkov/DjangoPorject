@@ -1,7 +1,6 @@
-from .models import Author, Category, Post
+from .models import Author, Category, Post, Comment
 from datetime import datetime, timedelta
-from django.views.generic import ListView, DetailView
-
+from django.views.generic import ListView
 
 class AuthorMixin:
     """ Simple mixin for other class ."""

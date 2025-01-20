@@ -82,6 +82,9 @@ class Post(models.Model):
         self.rating_post -= 1
         self.save()
 
+    def tests(self):
+        return self.comments.all()
+
 
 class PostCategory(models.Model):
     post_id = models.ForeignKey(Post, on_delete=models.CASCADE)
@@ -112,5 +115,6 @@ class Comment(models.Model):  # completed
         else:
             self.rating_comment -= 1
             self.save()
+
 
 

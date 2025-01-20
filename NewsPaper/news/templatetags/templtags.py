@@ -27,3 +27,8 @@ def url_replace(context, **kwargs):
    for k, v in kwargs.items():
        d[k] = v
    return d.urlencode()
+
+@register.filter(name='splitter')
+def cut_path(string: str, delete_part: str) -> str:
+    string.strip(delete_part + '/')
+    return string
