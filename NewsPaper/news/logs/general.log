@@ -271,3 +271,10 @@ File logger.
 -Module : autoreload
 -Message : Watching for file changes with StatReloader
 
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 13:25:12,753
+-Level : INFO
+-Module : autoreload
+-Message : Watching for file changes with StatReloader
+

@@ -2,3 +2,4 @@ venv/
 .idea/
 __pycache__/
 news_cache/
+.env

@@ -37,13 +37,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'news',
-    'article',
-    'authorisation',
+    'django.contrib.sites',
     'django_filters',
     'debug_toolbar',
-    'signin',
-    'accounts'
+    'signin.apps.SigninConfig',
+    'news.apps.NewsConfig',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.yandex',
 ]
 
 MIDDLEWARE = [
