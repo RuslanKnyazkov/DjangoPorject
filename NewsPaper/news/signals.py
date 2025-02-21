@@ -25,5 +25,13 @@ def foo(sender, created, instance, **kwargs):
                 mail_content.attach_alternative(html_content,
                                                 'text/html')
                 mail_content.send()
+    else:
+        mail_content = EmailMultiAlternatives(
+            subject=f'',
+            body=f'В разделе появилась новая запись',
+            from_email='rus.knyazkov.94@mail.ru',
+            to=['rus.knyazkov.94@mail.ru']
+        )
+        mail_content.send()
 
 

@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 # Application definition
 
@@ -148,4 +148,174 @@ CACHES = {
     }
 }
 
+<<<<<<< HEAD
 
+=======
+LOGIN_URL = 'accounts/login'
+LOGIN_REDIRECT_URL = 'top'
+
+AUTHENTICATION_BACKENDS = [
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+# Account setting
+
+ACCOUNT_FORMS = {'signup': 'signin.forms.BasicSignupForm'}
+
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_VERIFICATION = 'optional'
+
+SITE_ID = 1
+ADMINS = [('Ruslan', config('EMAIL_HOST_USER')),]
+
+# Email setting
+
+EMAIL_HOST = config('EMAIL_HOST')
+EMAIL_PORT = config('EMAIL_PORT')
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+SERVER_EMAIL = EMAIL_HOST_USER
+EMAIL_ADMIN = (EMAIL_HOST_USER)
+
+# # Apsceduler
+#
+# APSCHEDULER_DATETIME_FORMAT = "N j, Y, f:s a"
+# APSCHEDULER_RUN_NOW_TIMEOUT = 25
+
+
+# Redis
+CELERY_BROKER_CONNECTION_RETRY_ON_STARTUP = True
+CELERY_BROKER_URL = 'redis://localhost:6379'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+
+# Logger configuration.
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "formatters": {
+        "debugs": {
+            "format": "Console logging.\n"
+                      "-Name : {name}\n"
+                      "-Time : {asctime}\n"
+                      "-Level : {levelname}\n"
+                      "-Message : {message}",
+            "style": "{",
+        },
+        "warnings": {
+            "format": "Console logging.\n"
+                      "-Name : {name}\n"
+                      "-Time : {asctime}\n"
+                      "-Path : [{pathname}]\n"
+                      "-Level : {levelname}\n"
+                      "-Message :  {message}",
+            "style": '{'
+        },
+        "errors": {
+            "format": "Time : {asctime} \n"
+                      "-Name : {name}\n"
+                      "-Type level : {levelname}\n"
+                      "-Message : {message}\n"
+                      "-Path : [{pathname}]\n"
+                      "-Stack : {exc_info}\n",
+            "style": "{"
+        },
+        "general format": {
+            "format": "File logger.\n"
+                      "-Name : {name}\n"
+                      "-Time : {asctime}\n"
+                      "-Level : {levelname}\n"
+                      "-Module : {module}\n"
+                      "-Message : {message}\n",
+            "style": '{'
+        }
+
+    },
+    "filters": {
+        "require_debug_false": {
+            "()": "django.utils.log.RequireDebugFalse",
+        },
+        "require_debug_true": {
+            "()": "django.utils.log.RequireDebugTrue",
+        },
+    },
+    "handlers": {
+        "debug": {
+            "level": "DEBUG",
+            "filters": ["require_debug_true"],
+            "()": "logging.StreamHandler",
+            "formatter": "debugs",
+        },
+        "warning": {
+            "level": "WARNING",
+            "filters": ["require_debug_true"],
+            "()": "logging.StreamHandler",
+            "formatter": "warnings",
+        },
+        "error": {
+            "level": "ERROR",
+            "filters": ["require_debug_true"],
+            "()": "logging.StreamHandler",
+            "formatter": "errors",
+        },
+        "mail_admins": {
+            "level": "ERROR",
+            "filters": ["require_debug_false"],
+            "()": 'django.utils.log.AdminEmailHandler',
+            'formatter': 'warnings'
+        },
+        "general": {
+            "filters": ["require_debug_false"],
+            "level": "INFO",
+            "()": "logging.FileHandler",
+            "filename": "./news/logs/general.log",
+            "formatter": "general format"
+        },
+        "errors": {
+            "level": "ERROR",
+            "()": "logging.FileHandler",
+            "filename": "./news/logs/errors.log",
+            "formatter": "errors"
+        },
+        "security": {
+            "level": "DEBUG",
+            '()': 'logging.FileHandler',
+            'filename': './news/logs/security.log',
+            'formatter': 'general format'
+        },
+    },
+    "loggers": {
+        "django": {
+            "handlers": ["debug", "warning", "error", 'general'],
+        },
+        "django.request": {
+            "handlers": ['errors', 'mail_admins']
+        },
+        "django.server": {
+            "handlers": ['errors', 'mail_admins']
+        },
+        "django.template": {
+            "handlers": ['errors']
+        },
+        "django.db.backends": {
+            "handlers": ["errors"]
+        },
+        "django.security": {
+            "handlers": ["errors"]
+        }
+    }
+}
+>>>>>>> temp
