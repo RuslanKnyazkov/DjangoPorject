@@ -362,3 +362,654 @@ File logger.
 -Module : log
 -Message : Not Found: /static/css/self.css
 
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 15:59:02,738
+-Level : INFO
+-Module : autoreload
+-Message : Watching for file changes with StatReloader
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 15:59:04,430
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/css/self.css
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 15:59:04,431
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/css/styles.css
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 15:59:04,540
+-Level : WARNING
+-Module : log
+-Message : Not Found: /favicon.ico
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 15:59:31,103
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/css/self.css
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 15:59:31,105
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/css/styles.css
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 15:59:31,108
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/js/js.js
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 15:59:31,123
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/images/post items/icon comment.png
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 15:59:31,126
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/images/post items/icon rating.png
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 15:59:34,865
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/css/styles.css
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 15:59:34,870
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/css/self.css
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 15:59:52,852
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/css/self.css
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 15:59:52,858
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/css/styles.css
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 15:59:52,862
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/js/js.js
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 15:59:53,534
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/images/post items/icon comment.png
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 15:59:53,539
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/images/post items/icon rating.png
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 15:59:53,677
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/images/post items/icon comment.png
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 15:59:53,683
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/images/post items/icon rating.png
+
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 16:03:11,106
+-Level : INFO
+-Module : autoreload
+-Message : Watching for file changes with StatReloader
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 16:03:27,541
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/css/self.css
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 16:03:27,552
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/css/styles.css
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 16:03:27,569
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/js/js.js
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 16:03:28,291
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/images/post items/icon comment.png
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 16:03:28,295
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/images/post items/icon rating.png
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 16:03:29,094
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/images/post items/icon comment.png
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 16:03:29,096
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/images/post items/icon rating.png
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 16:03:35,130
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/css/self.css
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 16:03:35,132
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/css/styles.css
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 16:03:35,140
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/js/js.js
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 16:03:35,719
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/images/post items/icon comment.png
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 16:03:35,723
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/images/post items/icon rating.png
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 16:03:35,790
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/images/post items/icon comment.png
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 16:03:35,792
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/images/post items/icon rating.png
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 16:03:54,970
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/css/self.css
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 16:03:54,979
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/css/styles.css
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 16:03:54,984
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/js/js.js
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 16:03:55,493
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/images/post items/icon comment.png
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 16:03:55,504
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/images/post items/icon rating.png
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 16:03:55,559
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/images/post items/icon comment.png
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 16:03:55,561
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/images/post items/icon rating.png
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 16:03:57,189
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/css/self.css
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 16:03:57,203
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/css/styles.css
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 16:03:57,206
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/js/js.js
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 16:04:01,747
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/css/self.css
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 16:04:01,752
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/css/styles.css
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 16:04:01,753
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/images/avatars/default.jpg
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 16:04:01,764
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/images/avatars/2025/01/20/default_INAtMqo.jpg
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 16:04:01,778
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/images/avatars/2025/01/20/default.jpg
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 16:04:02,036
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/images/avatars/default.jpg
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 16:04:10,858
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/css/self.css
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 16:04:10,862
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/css/styles.css
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 16:04:11,456
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/images/avatars/default.jpg
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 16:04:47,359
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/css/self.css
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 16:04:47,365
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/css/styles.css
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 16:04:48,240
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/images/avatars/default.jpg
+
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 16:05:30,842
+-Level : INFO
+-Module : autoreload
+-Message : C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\NewsPaper\settings.py changed, reloading.
+
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 16:20:51,489
+-Level : INFO
+-Module : autoreload
+-Message : Watching for file changes with StatReloader
+
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 16:21:42,697
+-Level : INFO
+-Module : autoreload
+-Message : C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\NewsPaper\urls.py changed, reloading.
+
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 16:21:44,141
+-Level : INFO
+-Module : autoreload
+-Message : Watching for file changes with StatReloader
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 16:21:47,810
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/css/self.css
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 16:21:47,811
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/css/styles.css
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 16:21:47,816
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/js/js.js
+
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 16:27:04,469
+-Level : INFO
+-Module : autoreload
+-Message : C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\NewsPaper\settings.py changed, reloading.
+
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 16:28:12,317
+-Level : INFO
+-Module : autoreload
+-Message : Watching for file changes with StatReloader
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 16:28:15,975
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/css/self.css
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 16:28:15,981
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/css/styles.css
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 16:28:15,984
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/js/js.js
+
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 16:30:21,349
+-Level : INFO
+-Module : autoreload
+-Message : C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\NewsPaper\urls.py changed, reloading.
+
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 16:30:22,812
+-Level : INFO
+-Module : autoreload
+-Message : Watching for file changes with StatReloader
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 16:30:27,172
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/css/self.css
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 16:30:27,180
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/css/styles.css
+
+File logger.
+-Name : django.request
+-Time : 2025-02-21 16:30:27,186
+-Level : WARNING
+-Module : log
+-Message : Not Found: /static/js/js.js
+
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 16:33:18,313
+-Level : INFO
+-Module : autoreload
+-Message : C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\NewsPaper\urls.py changed, reloading.
+
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 16:33:19,429
+-Level : INFO
+-Module : autoreload
+-Message : Watching for file changes with StatReloader
+
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 16:34:04,692
+-Level : INFO
+-Module : autoreload
+-Message : C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\NewsPaper\urls.py changed, reloading.
+
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 16:34:05,911
+-Level : INFO
+-Module : autoreload
+-Message : Watching for file changes with StatReloader
+
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 16:35:34,239
+-Level : INFO
+-Module : autoreload
+-Message : C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\NewsPaper\urls.py changed, reloading.
+
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 16:35:35,381
+-Level : INFO
+-Module : autoreload
+-Message : Watching for file changes with StatReloader
+
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 16:36:02,377
+-Level : INFO
+-Module : autoreload
+-Message : C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\NewsPaper\urls.py changed, reloading.
+
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 16:36:03,525
+-Level : INFO
+-Module : autoreload
+-Message : Watching for file changes with StatReloader
+
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 16:36:51,816
+-Level : INFO
+-Module : autoreload
+-Message : C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\NewsPaper\settings.py changed, reloading.
+
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 16:36:52,913
+-Level : INFO
+-Module : autoreload
+-Message : Watching for file changes with StatReloader
+
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 16:37:58,070
+-Level : INFO
+-Module : autoreload
+-Message : C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\NewsPaper\settings.py changed, reloading.
+
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 16:37:59,194
+-Level : INFO
+-Module : autoreload
+-Message : Watching for file changes with StatReloader
+
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 16:38:17,677
+-Level : INFO
+-Module : autoreload
+-Message : C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\NewsPaper\settings.py changed, reloading.
+
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 16:38:18,872
+-Level : INFO
+-Module : autoreload
+-Message : Watching for file changes with StatReloader
+
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 16:39:01,174
+-Level : INFO
+-Module : autoreload
+-Message : C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\NewsPaper\settings.py changed, reloading.
+
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 16:39:02,237
+-Level : INFO
+-Module : autoreload
+-Message : Watching for file changes with StatReloader
+
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 16:41:46,146
+-Level : INFO
+-Module : autoreload
+-Message : C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\NewsPaper\urls.py changed, reloading.
+
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 16:41:47,296
+-Level : INFO
+-Module : autoreload
+-Message : Watching for file changes with StatReloader
+
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 16:42:00,591
+-Level : INFO
+-Module : autoreload
+-Message : C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\NewsPaper\urls.py changed, reloading.
+
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 16:42:01,714
+-Level : INFO
+-Module : autoreload
+-Message : Watching for file changes with StatReloader
+
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 16:44:18,216
+-Level : INFO
+-Module : autoreload
+-Message : C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\NewsPaper\settings.py changed, reloading.
+

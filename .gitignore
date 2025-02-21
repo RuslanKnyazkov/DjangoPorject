@@ -3,5 +3,4 @@ venv/
 __pycache__/
 news_cache/
 .env
-general.log
-error.log
+logs/

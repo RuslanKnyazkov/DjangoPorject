@@ -16,8 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from .settings import DEBUG
+from .settings import DEBUG, STATIC_URL, STATIC_ROOT
 from .view import home_page
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('', home_page, name = 'home'),
@@ -25,7 +26,7 @@ urlpatterns = [
     path('post/', include('news.urls')),
     path('user/', include('signin.urls')),
     path('accounts/', include('allauth.urls')),
-]
+] + static(STATIC_URL, document_root = STATIC_ROOT)
 
 if DEBUG:
     import debug_toolbar

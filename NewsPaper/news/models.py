@@ -64,7 +64,7 @@ class Post(models.Model):
         return f'{self.title}'
 
     def get_absolute_url(self):
-        return reverse('single_news', kwargs={"pk": self.pk})
+        return reverse('single_post', kwargs={"pk": self.pk})
 
 
     def save(self, *args, **kwargs):

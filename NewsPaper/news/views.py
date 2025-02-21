@@ -115,7 +115,7 @@ class PostUpdate(PermissionRequiredMixin, UpdateView):
 class DeletePost(PermissionRequiredMixin, DeleteView):
     permission_required = ('news.delete_post')
     model = Post
-    success_url = reverse_lazy('post')
+    success_url = reverse_lazy('news')
     template_name = 'delete_post.html'
 
 
@@ -129,7 +129,7 @@ class ArticleUpdate(PermissionRequiredMixin, UpdateView):
 class DeleteArticle(PermissionRequiredMixin, DeleteView):
     permission_required = ('news.delete_post')
     model = Post
-    success_url = reverse_lazy('post')
+    success_url = reverse_lazy('news')
     template_name = 'delete_article.html'
 
 
