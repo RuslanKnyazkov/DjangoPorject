@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'authorisation',
     'django_filters',
     'debug_toolbar',
+    'signin',
+    'accounts'
 ]
 
 MIDDLEWARE = [
@@ -148,9 +150,6 @@ CACHES = {
     }
 }
 
-<<<<<<< HEAD
-
-=======
 LOGIN_URL = 'accounts/login'
 LOGIN_REDIRECT_URL = 'top'
 
@@ -318,4 +317,4 @@ LOGGING = {
         }
     }
 }
->>>>>>> temp
+
