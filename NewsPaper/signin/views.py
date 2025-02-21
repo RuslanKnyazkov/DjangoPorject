@@ -8,7 +8,7 @@ from .forms import BaseRegisterForm, BaseUserForm
 from django.shortcuts import render
 from django.contrib.auth import login, authenticate
 from .models import Profile
-
+from django.contrib.auth.views import LoginView, LogoutView
 
 class BaseRegisterView(CreateView):
     form_class = BaseRegisterForm
@@ -20,7 +20,7 @@ class BaseRegisterView(CreateView):
                                     password=form.cleaned_data['password1'],
                                     )
             login(self.request, new_user)
-        return redirect('post')
+        return redirect('top')
 
 
 class ProfileView(DetailView):
@@ -39,7 +39,7 @@ class UpdateProfile(UpdateView):
     pk_url_kwarg = 'user_id'
 
     def get_object(self, queryset=None):
-        obj = get_object_or_404(Profile, user_id=self.request.user.pk)
+        obj = get_object_or_404(Profile, user_id = self.request.user.pk)
         return obj
 
     def get_context_data(self, **kwargs):
@@ -65,7 +65,10 @@ def upgrade_me(request):
     author_group = Group.objects.get(name='authors')
     if not request.user.groups.filter(name='authors').exists():
         author_group.user_set.add(user)
-    return redirect('post')
+    return redirect('top')
+
+class SignIn(LoginView):
+    template_name = 'login.html'
 
 
 def logout_page(request):

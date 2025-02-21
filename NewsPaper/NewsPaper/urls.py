@@ -19,15 +19,12 @@ from django.urls import path, include
 from .settings import DEBUG
 from .view import home_page
 
-
 urlpatterns = [
     path('', home_page, name = 'home'),
     path('admin/', admin.site.urls),
     path('post/', include('news.urls')),
     path('user/', include('signin.urls')),
     path('accounts/', include('allauth.urls')),
-
-
 ]
 
 if DEBUG:

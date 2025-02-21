@@ -30,7 +30,6 @@
     <div class="post-info-items">
         <h3>{{n.title | censor}}</h3>
         <p>{{n.text_post| truncatewords:24 | censor}}</p>
-        <p>{{n.create_date| date:'M d Y'}}</p>
     </div>
 
     {% url 'single_post' n.pk as url %}
@@ -64,3 +63,4 @@
 {%block script%}
 <script src="{% static 'js/js.js'%}"></script>
 {% endblock%}
+<<<<<<<  ce4c5c17-2fbc-44b7-9a0b-e0c8c96ab807  >>>>>>>

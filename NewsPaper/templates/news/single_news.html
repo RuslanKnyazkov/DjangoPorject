@@ -1,12 +1,16 @@
 {%extends 'index.html'%}
-
 {%block title%} {{news.title}} {%endblock%}
 
 {%block content%}
 {% load templtags %}
-<div class="news_detail">
+<div class="single-post-content">
+    <div class="head-single-post">
+        <img src="{{news.author_post.name.profile.get_avatar}}" alt="" width="100" height="100">
+        {{news.author_post.name}}
+        <p>{{news.create_date| date:'M d Y'}}</p>
+    </div>
+    <div class="content-post">
     <h3>{{news.title | censor}}</h3>
-    <p>{{news.create_date| date:'M d Y'}}</p>
     <h5>{{news.text_post | censor}}</h5>
     {% url 'news' as url %}
     <a href="{{url}}">
@@ -42,6 +46,8 @@
 </div>
 
 {%endfor%}
+</div>
+
 </div>
 
 

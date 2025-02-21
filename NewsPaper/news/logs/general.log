@@ -1,0 +1,227 @@
+File logger.-Name : django.utils.autoreload
+-Time : 2025-02-21 11:29:06,641
+ -Level : INFO
+ -Module : autoreload
+ -Message : Watching for file changes with StatReloader
+File logger.-Name : django.request
+-Time : 2025-02-21 11:29:21,718
+ -Level : WARNING
+ -Module : log
+ -Message : Not Found: /post/news/9999
+File logger.-Name : django.utils.autoreload
+-Time : 2025-02-21 11:29:55,106
+ -Level : INFO
+ -Module : autoreload
+ -Message : C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\NewsPaper\settings.py changed, reloading.
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 11:29:56,324
+ -Level : INFO
+ -Module : autoreload
+ -Message : Watching for file changes with StatReloader
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 11:33:13,233
+ -Level : INFO
+ -Module : autoreload
+ -Message : C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\news\urls.py changed, reloading.
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 11:33:14,411
+ -Level : INFO
+ -Module : autoreload
+ -Message : Watching for file changes with StatReloader
+File logger.
+-Name : django.request
+-Time : 2025-02-21 11:33:22,385
+ -Level : WARNING
+ -Module : log
+ -Message : Not Found: /static/images/avatars/default.jpg
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 11:33:31,951
+ -Level : INFO
+ -Module : autoreload
+ -Message : C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\news\urls.py changed, reloading.
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 11:33:33,681
+ -Level : INFO
+ -Module : autoreload
+ -Message : Watching for file changes with StatReloader
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 11:33:52,340
+ -Level : INFO
+ -Module : autoreload
+ -Message : C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\news\views.py changed, reloading.
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 11:33:54,219
+ -Level : INFO
+ -Module : autoreload
+ -Message : Watching for file changes with StatReloader
+File logger.
+-Name : django.request
+-Time : 2025-02-21 11:34:50,209
+ -Level : ERROR
+ -Module : log
+ -Message : Internal Server Error: /post/home/
+Traceback (most recent call last):
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\news\views.py", line 14, in get_top_rating_post
+    ваываываыва
+NameError: name 'ваываываыва' is not defined
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 11:40:13,360
+ -Level : INFO
+ -Module : autoreload
+ -Message : C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\news\views.py changed, reloading.
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 11:40:15,961
+ -Level : INFO
+ -Module : autoreload
+ -Message : Watching for file changes with StatReloader
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 11:49:08,557
+ -Level : INFO
+ -Module : autoreload
+ -Message : C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\NewsPaper\settings.py changed, reloading.
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 11:49:10,065
+ -Level : INFO
+ -Module : autoreload
+ -Message : Watching for file changes with StatReloader
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 11:58:57,477
+ -Level : INFO
+ -Module : autoreload
+ -Message : C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\NewsPaper\settings.py changed, reloading.
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 11:58:58,896
+ -Level : INFO
+ -Module : autoreload
+ -Message : Watching for file changes with StatReloader
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 12:01:33,558
+ -Level : INFO
+ -Module : autoreload
+ -Message : C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\NewsPaper\settings.py changed, reloading.
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 12:01:34,726
+ -Level : INFO
+ -Module : autoreload
+ -Message : Watching for file changes with StatReloader
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 12:02:38,080
+ -Level : INFO
+ -Module : autoreload
+ -Message : Watching for file changes with StatReloader
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 12:03:36,853
+ -Level : INFO
+ -Module : autoreload
+ -Message : C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\NewsPaper\settings.py changed, reloading.
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 12:03:38,441
+ -Level : INFO
+ -Module : autoreload
+ -Message : Watching for file changes with StatReloader
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 12:05:06,609
+ -Level : INFO
+ -Module : autoreload
+ -Message : C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\NewsPaper\settings.py changed, reloading.
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 12:05:08,033
+ -Level : INFO
+ -Module : autoreload
+ -Message : Watching for file changes with StatReloader
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 12:09:25,187
+ -Level : INFO
+ -Module : autoreload
+ -Message : C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\NewsPaper\settings.py changed, reloading.
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 12:09:26,401
+ -Level : INFO
+ -Module : autoreload
+ -Message : Watching for file changes with StatReloader
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 12:10:00,646
+ -Level : INFO
+ -Module : autoreload
+ -Message : C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\NewsPaper\settings.py changed, reloading.
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 12:10:02,088
+ -Level : INFO
+ -Module : autoreload
+ -Message : Watching for file changes with StatReloader
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 12:11:01,998
+ -Level : INFO
+ -Module : autoreload
+ -Message : C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\NewsPaper\settings.py changed, reloading.
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 12:11:03,140
+ -Level : INFO
+ -Module : autoreload
+ -Message : Watching for file changes with StatReloader
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 12:12:34,849
+ -Level : INFO
+ -Module : autoreload
+ -Message : C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\NewsPaper\settings.py changed, reloading.
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 12:12:36,223
+ -Level : INFO
+ -Module : autoreload
+ -Message : Watching for file changes with StatReloader
+File logger.
+-Name : django.request
+-Time : 2025-02-21 12:12:39,411
+ -Level : ERROR
+ -Module : log
+ -Message : Internal Server Error: /post/home/
+Traceback (most recent call last):
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\news\views.py", line 15, in get_top_rating_post
+    ваываываыва
+NameError: name 'ваываываыва' is not defined
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 12:14:54,416
+ -Level : INFO
+ -Module : autoreload
+ -Message : C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\NewsPaper\settings.py changed, reloading.
