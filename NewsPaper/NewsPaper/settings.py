@@ -57,6 +57,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
+    "allauth.account.middleware.AccountMiddleware",
 ]
 
 INTERNAL_IPS = [
@@ -68,14 +69,20 @@ ROOT_URLCONF = 'NewsPaper.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [path.join(BASE_DIR, 'templates')],
+        'DIRS': [path.join(BASE_DIR, 'templates'),
+                 path.join(BASE_DIR, 'templates/post'),
+                 path.join(BASE_DIR, 'templates/news'),
+                 path.join(BASE_DIR, 'templates/article'),
+                 path.join(BASE_DIR, 'templates/author'),
+                 path.join(BASE_DIR, 'templates/user'),
+                 path.join(BASE_DIR, 'templates/accounts/email/')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
-                'django.template.context_processors.debug',
+                'django.template.context_processors.debug',  #
                 'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
+                'django.contrib.auth.context_processors.auth',  #
+                'django.contrib.messages.context_processors.messages',  #
             ],
         },
     },
@@ -127,7 +134,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Moscow'
 
 USE_I18N = True
 
@@ -137,7 +144,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
-
 STATICFILES_DIRS = [BASE_DIR / 'static']
 
 # Default primary key field type
@@ -319,4 +325,3 @@ LOGGING = {
         }
     }
 }
-
