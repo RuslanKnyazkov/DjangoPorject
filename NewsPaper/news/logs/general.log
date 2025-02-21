@@ -225,3 +225,10 @@ File logger.
  -Level : INFO
  -Module : autoreload
  -Message : C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\NewsPaper\settings.py changed, reloading.
+File logger.
+-Name : django.utils.autoreload
+-Time : 2025-02-21 13:14:54,261
+-Level : INFO
+-Module : autoreload
+-Message : Watching for file changes with StatReloader
+
