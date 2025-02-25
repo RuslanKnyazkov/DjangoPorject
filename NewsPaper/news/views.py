@@ -2,6 +2,7 @@ from django.core.cache import cache
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.shortcuts import render
 from django.urls import reverse_lazy
+from django.views import View
 from django.views.generic import (ListView, DetailView,
                                   CreateView,UpdateView, DeleteView)
 from .filters import PostFilter
@@ -10,6 +11,15 @@ from .mixin import (AuthorMixin, PostMixin,
                     SingleCategoryPostView)
 from .models import Post, Comment, Author, Category
 
+from django.utils.translation import gettext as _
+
+
+class Index(View):
+    def get(self, request):
+        string = _('Hello world')
+        print(string)
+
+        return HttpResponse(string)
 
 def get_top_rating_post(request):
     """ Simple function for render top post on rating. """
@@ -145,7 +155,7 @@ class AuthorView(ListView):
 
 
 from django.views.decorators.csrf import csrf_exempt
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 
 
 @csrf_exempt

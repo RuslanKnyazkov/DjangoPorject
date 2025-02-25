@@ -3,6 +3,7 @@
 {% load static %}
 {%block title%}News{%endblock%}
 {% load cache %}
+{% load i18n %}
 
 {% cache 60 side%}
 {%block side %}
@@ -20,7 +21,7 @@
 
 {%block content%}
 
-<h1>Колличество новостей {{news|length}}</h1>
+<h1>{% trans "Number of news items" %} {{news|length}}</h1>
 {%for n in news%}
 <div class="news_detail">
     <div class="post-items">

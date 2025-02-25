@@ -3,7 +3,8 @@ from .views import (NewsView, DetailNews, NewsCreated,
                     PostSearchView, PostUpdate, DeletePost,
                     AuthorView, subscribe, NewsCategoryView,
                     ArticleView, ActicleCreated, ArticleUpdate,
-                    DeleteArticle, ArticleCategoryView, get_top_rating_post)
+                    DeleteArticle, ArticleCategoryView, get_top_rating_post,
+                    Index)
 from django.views.decorators.cache import cache_page
 
 
@@ -42,4 +43,5 @@ urlpatterns = [
     path('article/<str:category>/<int:pk>', ArticleCategoryView.as_view(), name='category_article'),
     path('author/', AuthorView.as_view(), name='show_authors'),
     path('subscribe/', subscribe, name='subscribe'),
+    path('index/', Index.as_view()),
 ]

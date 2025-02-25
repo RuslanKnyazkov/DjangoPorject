@@ -6,7 +6,7 @@
     <meta name="description" content=""/>
     <meta name="author" content=""/>
     <title>Django Web</title>
-
+    {% load i18n %}
     {% load static %}
     {% load cache %}
     <link href="{%static 'css/self.css'%}" rel="stylesheet">
@@ -33,22 +33,22 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url 'top'%}">Home</a>
+                    <a class="nav-link active" aria-current="page" href="{% url 'top'%}">{% trans "Home" %}</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="http//:127.0.0.1/post/" role="button"
                        data-bs-toggle="dropdown"
                        aria-expanded="false">
-                        Post
+                        {% trans "Post" %}
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="{% url 'news' %}">News</a></li>
-                        <li><a class="dropdown-item" href="{% url 'article'%}">Article</a></li>
+                        <li><a class="dropdown-item" href="{% url 'news' %}">{% trans "News" %}</a></li>
+                        <li><a class="dropdown-item" href="{% url 'article'%}">{% trans "Article" %}</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="{% url 'search_news'%}">Search</a></li>
-                        <li><a class="dropdown-item" href="{% url 'show_authors'%}">Author</a></li>
+                        <li><a class="dropdown-item" href="{% url 'search_news'%}">{% trans "Search" %}</a></li>
+                        <li><a class="dropdown-item" href="{% url 'show_authors'%}">{% trans "Author" %}</a></li>
 
                     </ul>
                 </li>
@@ -60,18 +60,37 @@
                         {{ request.user }}
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="{% url 'logout'%}">Logout</a></li>
-                        <li><a class="dropdown-item" href="{% url 'profile' request.user.id %}">Profile</a></li>
+                        <li><a class="dropdown-item" href="{% url 'logout'%}">{% trans "Logout" %}</a></li>
+                        <li><a class="dropdown-item" href="{% url 'profile' request.user.id %}">{% trans "Profile" %}</a>
+                        </li>
                     </ul>
                 </li>
                 {% else %}
-                <a class="nav-link active" aria-current="page" href=" {% url 'login' %}">Sing In</a>
+                <a class="nav-link active" aria-current="page" href=" {% url 'login' %}">{% trans "Sing In" %}</a>
                 {% endif %}
 
             </ul>
+
+            <form action="{% url 'set_language' %}" method="POST"> {% csrf_token %}
+                <!-- Не забываем по csrf_token для POST запросов -->
+                <input type="hidden" name="next" value="{{ redirect_to }}">
+
+                <select name="language" id="">
+                    {% get_available_languages as LANGUAGES %} <!-- получаем языки -->
+                    {% get_language_info_list for LANGUAGES as languages %} <!-- Помещаем их в список languages -->
+                    {% get_current_language as LANGUAGE_CODE %}
+                    {% for language in languages %}
+                    <!-- Итерируясь по списку, выводим их название на языке пользователя и код -->
+                    <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %} selected {% endif %}>
+                        {{ language.name_local }} - {{ language.code }}
+                    </option>
+                    {% endfor %}
+                </select>
+                <input type="submit" value="set">
+            </form>
             <form class="d-flex" role="search" method="post">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
+                <button class="btn btn-outline-success" type="submit">{% trans "Search" %}</button>
 
             </form>
         </div>
@@ -94,6 +113,7 @@
     </div>
 </div>
 {% block script %}
+<script src="{% static 'js/chlang.js'%}"></script>
 {% endblock %}
 
 </body>
