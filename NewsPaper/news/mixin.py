@@ -2,6 +2,7 @@ from .models import Author, Category, Post, Comment
 from datetime import datetime, timedelta
 from django.views.generic import ListView
 
+
 class AuthorMixin:
     """ Simple mixin for other class ."""
 
@@ -41,7 +42,9 @@ class SingleCategoryPostView(CategoryMixin, ListView):
         return super().get(request, args, kwargs)
 
     def get_queryset(self):
-        return Post.objects.filter(test=self.kwargs['pk'], choice_categories=self.kwargs['category'])
+        retranslator = 'новость' if self.kwargs['category'] == 'news' else 'статья'
+        return Post.objects.filter(test=self.kwargs['pk'],
+                                   choice_categories=retranslator)
 
     def get_context_data(self, **kwargs):
         return super().get_context_data(cat=self.get_category(),

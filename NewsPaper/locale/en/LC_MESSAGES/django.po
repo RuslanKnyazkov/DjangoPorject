@@ -26,37 +26,37 @@ msgid "Home"
 msgstr ""
 
 #: templates/index.html:42
-msgid "Post"
-msgstr ""
+msgid "Публикация"
+msgstr "Post"
 
 #: templates/index.html:45
 msgid "News"
-msgstr ""
+msgstr "News"
 
 #: templates/index.html:46
 msgid "Article"
-msgstr ""
+msgstr "Article"
 
 #: templates/index.html:50 templates/index.html:93
 msgid "Search"
-msgstr ""
+msgstr "Search"
 
 #: templates/index.html:51
 msgid "Author"
-msgstr ""
+msgstr "Author"
 
 #: templates/index.html:63
 msgid "Logout"
-msgstr ""
+msgstr "Logout"
 
 #: templates/index.html:64
 msgid "Profile"
-msgstr ""
+msgstr "Profile"
 
 #: templates/index.html:69
 msgid "Sing In"
-msgstr ""
+msgstr "Sing In"
 
 #: templates/news/news.html:24
 msgid "Number of news items"
-msgstr ""
+msgstr "Number of news items"

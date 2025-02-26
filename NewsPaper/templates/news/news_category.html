@@ -2,10 +2,11 @@
 {% load templtags %}
 {%block content%}
 {% load static %}
+{% load i18n %}
 
 <div class="sub-div" >
     <div id="sub_id" class="hidden-sub-div">
-        <button id="btn_sub" value="{{cat_id.id}}" class="btn btn-primary">Подписаться</button>
+        <button id="btn_sub" value="{{cat_id.id}}" class="btn btn-primary">{% trans "Подписаться" %}</button>
     </div>
 </div>
 
@@ -16,9 +17,10 @@
     <h3>{{query.title | censor}}</h3>
     <p>{{query.create_date| date:'M d Y'}}</p>
     <p>{{query.text_post| truncatewords:24 | censor}}</p>
+    {{query.choice_categories}}
     {% url 'single_news' query.pk as url %}
     <a href="{{url}}">
-        <button class="btn btn-outline-info" type="submit">Подробнее</button>
+        <button class="btn btn-outline-info" type="submit">{% trans "Подробнее" %}</button>
     </a>
 </div>
 {% endfor %}
@@ -27,18 +29,16 @@
 <div class="toast-container position-fixed bottom-0 end-0 p-3">
   <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
     <div class="toast-header">
-      <strong class="me-auto">Подписка оформлена!</strong>
+      <strong class="me-auto">{% trans "Подписка оформлена!" %}</strong>
       <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Закрыть"></button>
     </div>
     <div class="toast-body">
-      Привет, {{user}}! Поздравляем за подписку в категории {{ object }}.
+      {% trans "Привет, {{user}}! Поздравляем за подписку в категории" %} {{ object }}.
     </div>
   </div>
 </div>
 
 {% endblock%}
-
-
 
 {% block script %}
 <script src="{% static 'js/js.js'%}"></script>

@@ -14,13 +14,6 @@ from .models import Post, Comment, Author, Category
 from django.utils.translation import gettext as _
 
 
-class Index(View):
-    def get(self, request):
-        string = _('Hello world')
-        print(string)
-
-        return HttpResponse(string)
-
 def get_top_rating_post(request):
     """ Simple function for render top post on rating. """
     top_post = Post.objects.all().order_by("-rating_post")[:10]
@@ -28,12 +21,12 @@ def get_top_rating_post(request):
 
 class NewsView(PostMixin):
     template_name = 'news.html'
-    queryset = Post.objects.filter(choice_categories='news')
+    queryset = Post.objects.filter(choice_categories='новость')
 
 
 class ArticleView(PostMixin):
     template_name = 'article.html'
-    queryset = Post.objects.filter(choice_categories='article')
+    queryset = Post.objects.filter(choice_categories='статья')
 
 
 class NewsCategoryView(SingleCategoryPostView):

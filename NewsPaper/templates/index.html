@@ -61,7 +61,8 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="{% url 'logout'%}">{% trans "Logout" %}</a></li>
-                        <li><a class="dropdown-item" href="{% url 'profile' request.user.id %}">{% trans "Profile" %}</a>
+                        <li><a class="dropdown-item" href="{% url 'profile' request.user.id %}">{% trans "Profile"
+                            %}</a>
                         </li>
                     </ul>
                 </li>
@@ -88,11 +89,7 @@
                 </select>
                 <input type="submit" value="set">
             </form>
-            <form class="d-flex" role="search" method="post">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">{% trans "Search" %}</button>
 
-            </form>
         </div>
     </div>
 </nav>

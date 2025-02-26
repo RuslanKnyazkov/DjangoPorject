@@ -53,7 +53,7 @@ class Post(models.Model):
 
     choice_categories = models.CharField(max_length=7,
                                          choices=NAME_POST,
-                                         default='news')
+                                         default='новость')
 
     test = models.ManyToManyField(Category, through='PostCategory', verbose_name='Категория')
     title = models.CharField(max_length=255, unique=True, verbose_name='Заголовок')
