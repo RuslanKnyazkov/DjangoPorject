@@ -5,6 +5,8 @@ from modeltranslation.admin import TranslationAdmin
 class PostAdmin(TranslationAdmin):
     model = Post
 
+class PostAdmin(TranslationAdmin):
+    model = Category
 
 admin.site.register(Post)
 admin.site.register(Author)

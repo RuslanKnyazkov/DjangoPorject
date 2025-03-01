@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-25 15:51+0300\n"
+"POT-Creation-Date: 2025-02-26 13:57+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,9 +20,25 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: news/views.py:19
-msgid "Hello world"
-msgstr "Привет мир"
+#: news/models.py:27
+msgid "sport"
+msgstr "спорт"
+
+#: news/models.py:28
+msgid "politic"
+msgstr "политика"
+
+#: news/models.py:29
+msgid "studying"
+msgstr "образование"
+
+#: news/models.py:30
+msgid "finance"
+msgstr "финансы"
+
+#: news/models.py:31
+msgid "test"
+msgstr "Тестируемая"
 
 #: templates/index.html:36
 msgid "Home"
@@ -40,7 +56,7 @@ msgstr "Новости"
 msgid "Article"
 msgstr "Статья"
 
-#: templates/index.html:50 templates/index.html:93
+#: templates/index.html:50
 msgid "Search"
 msgstr "Поиск"
 
@@ -52,14 +68,32 @@ msgstr "Автор"
 msgid "Logout"
 msgstr "Выйти"
 
-#: templates/index.html:64
-msgid "Profile"
-msgstr "Профиль"
-
-#: templates/index.html:69
+#: templates/index.html:70
 msgid "Sing In"
 msgstr "Войти"
 
 #: templates/news/news.html:24
 msgid "Number of news items"
 msgstr "Количество новостей"
+
+#: templates/news/news_category.html:9
+msgid "Подписаться"
+msgstr ""
+
+#: templates/news/news_category.html:23
+msgid "Подробнее"
+msgstr ""
+
+#: templates/news/news_category.html:32
+msgid "Подписка оформлена!"
+msgstr ""
+
+#: templates/news/news_category.html:36
+msgid "Привет, {{user}}! Поздравляем за подписку в категории"
+msgstr ""
+
+#~ msgid "Hello world"
+#~ msgstr "Привет мир"
+
+#~ msgid "Profile"
+#~ msgstr "Профиль"

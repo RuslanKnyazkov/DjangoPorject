@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.db.models import Sum
 from django.urls import reverse
 from django.core.cache import cache
-
+from django.utils.translation import gettext_noop as _
 class Author(models.Model):
     name = models.OneToOneField(User, on_delete=models.CASCADE)
     rating_user = models.IntegerField(default=0, db_column='rating_user')
@@ -24,17 +24,21 @@ class Author(models.Model):
 
 class Category(models.Model):
     NAME_CATEGORIES = [
-        ('спорт', 'sport'),
-        ('политика', 'politic'),
-        ('образование', 'studying'),
-        ('финансы', 'finance')
+        ('sport', _('sport')),
+        ('politic', _('politic')),
+        ('studying', _('studying')),
+        ('finance', _('finance')),
     ]
     name_categories = models.CharField(max_length=11,
-                                       choices=NAME_CATEGORIES, default='образование')
+                                       choices=NAME_CATEGORIES)
     subscribers = models.ManyToManyField(User, default=None, through='CategorySubscribers')
 
     def __str__(self):
         return f'{self.name_categories}'
+
+
+class CategorytransleteModel(models.Model):
+    name = models.CharField(max_length=11, )
 
 class CategorySubscribers(models.Model):
     category = models.ForeignKey(to=Category, on_delete=models.CASCADE)

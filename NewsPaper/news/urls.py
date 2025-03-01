@@ -28,7 +28,7 @@ from django.views.decorators.cache import cache_page
 
 
 urlpatterns = [
-    path('home/', get_top_rating_post, name='top'),
+    #path('home/', get_top_rating_post, name='top'),
     path('<int:pk>', DetailNews.as_view(), name='single_post'),
     path('news/', NewsView.as_view(), name='news'),
     path('news/<str:category>/<int:pk>', NewsCategoryView.as_view(), name='category_news'),

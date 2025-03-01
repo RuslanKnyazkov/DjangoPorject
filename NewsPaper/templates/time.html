@@ -1,0 +1,44 @@
+{% extends 'index.html'%}
+
+{% load tz %}
+
+{% block content %}
+
+<div class="tz">
+
+
+{% get_current_timezone as TIME_ZONE %}
+<form action="" method="POST">
+    {% csrf_token %}
+    <label for="timezone">Time zone:</label>
+    <select name="timezone">
+        {% for tz in timezones %}
+        <option value="{{ tz }}" {% if tz == TIME_ZONE %} selected{% endif %}>{{ tz }}</option>
+        {% endfor %}
+    </select>
+    <input type="submit" value="Set">
+</form>
+
+{{ TIME_ZONE }}
+<p id="time">{{ current_time|timezone:TIME_ZONE }}</p>
+</div>
+
+{% endblock %}
+{% block script%}
+
+<script>
+    const bodyStyle = document.querySelector('.tz')
+    function getColor ()  {
+        let date = document.getElementById('time').textContent.split(' ')
+        let hour = Number(date[4].split(':')[0])
+        if (hour >= 19 || hour <= 7) {
+            bodyStyle.style.background = 'blue'
+        }
+        else {
+            bodyStyle.style.background = 'white'
+        }
+    }
+    getColor()
+
+</script>
+{% endblock %}

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-25 15:53+0300\n"
+"POT-Creation-Date: 2025-02-26 13:46+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,17 +17,30 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-#: news/views.py:19
-msgid "Hello world"
-msgstr ""
+
+#: news/models.py:27
+msgid "sport"
+msgstr "спорт"
+
+#: news/models.py:28
+msgid "politic"
+msgstr "политика"
+
+#: news/models.py:29
+msgid "studying"
+msgstr "образование"
+
+#: news/models.py:30
+msgid "finance"
+msgstr "финансы"
 
 #: templates/index.html:36
 msgid "Home"
 msgstr ""
 
 #: templates/index.html:42
-msgid "Публикация"
-msgstr "Post"
+msgid "Post"
+msgstr ""
 
 #: templates/index.html:45
 msgid "News"
@@ -37,7 +50,7 @@ msgstr "News"
 msgid "Article"
 msgstr "Article"
 
-#: templates/index.html:50 templates/index.html:93
+#: templates/index.html:50
 msgid "Search"
 msgstr "Search"
 
@@ -49,14 +62,35 @@ msgstr "Author"
 msgid "Logout"
 msgstr "Logout"
 
-#: templates/index.html:64
-msgid "Profile"
-msgstr "Profile"
-
-#: templates/index.html:69
+#: templates/index.html:70
 msgid "Sing In"
 msgstr "Sing In"
 
 #: templates/news/news.html:24
 msgid "Number of news items"
-msgstr "Number of news items"
+msgstr ""
+
+#: templates/news/news_category.html:9
+msgid "Подписаться"
+msgstr ""
+
+#: templates/news/news_category.html:23
+msgid "Подробнее"
+msgstr ""
+
+#: templates/news/news_category.html:32
+msgid "Подписка оформлена!"
+msgstr ""
+
+#: templates/news/news_category.html:36
+msgid "Привет, {{user}}! Поздравляем за подписку в категории"
+msgstr ""
+
+#~ msgid "Количество новостей"
+#~ msgstr "Number of news items"
+
+#~ msgid "Публикация"
+#~ msgstr "Post"
+
+#~ msgid "Profile"
+#~ msgstr "Profile"
