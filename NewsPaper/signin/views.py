@@ -20,7 +20,7 @@ class BaseRegisterView(CreateView):
                                     password=form.cleaned_data['password1'],
                                     )
             login(self.request, new_user)
-        return redirect('top')
+        return redirect('news')
 
 
 class ProfileView(DetailView):
@@ -65,7 +65,7 @@ def upgrade_me(request):
     author_group = Group.objects.get(name='authors')
     if not request.user.groups.filter(name='authors').exists():
         author_group.user_set.add(user)
-    return redirect('top')
+    return redirect('news')
 
 class SignIn(LoginView):
     template_name = 'login.html'

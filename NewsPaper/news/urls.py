@@ -1,10 +1,11 @@
-from django.urls import path
+from django.urls import path, include
 from .views import (NewsView, DetailNews, NewsCreated,
                     PostSearchView, PostUpdate, DeletePost,
                     AuthorView, subscribe, NewsCategoryView,
                     ArticleView, ActicleCreated, ArticleUpdate,
-                    DeleteArticle, ArticleCategoryView, get_top_rating_post,
-                   )
+                    DeleteArticle, ArticleCategoryView,
+                    NewsApiView, ArticleApiView)
+from rest_framework import routers
 from django.views.decorators.cache import cache_page
 
 
@@ -26,9 +27,13 @@ from django.views.decorators.cache import cache_page
 #     path('subscribe/', subscribe, name='subscribe'),
 # ]
 
+router = routers.DefaultRouter()
+router.register(r'news', NewsApiView, basename='news')
+router.register(r'articles', ArticleApiView, basename='article')
+
 
 urlpatterns = [
-    #path('home/', get_top_rating_post, name='top'),
+    path('api/', include(router.urls)),
     path('<int:pk>', DetailNews.as_view(), name='single_post'),
     path('news/', NewsView.as_view(), name='news'),
     path('news/<str:category>/<int:pk>', NewsCategoryView.as_view(), name='category_news'),

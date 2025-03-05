@@ -12931,3 +12931,2429 @@ Time : 2025-03-01 15:54:05,774
 -Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\servers\basehttp.py]
 -Stack : None
 
+Time : 2025-03-02 22:38:18,130 
+-Name : django.request
+-Type level : ERROR
+-Message : Internal Server Error: /api/login/
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\log.py]
+-Stack : (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'top' not found. 'top' is not a valid view function or pattern name."), <traceback object at 0x000001D2E1C11600>)
+Traceback (most recent call last):
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\decorators\debug.py", line 143, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\contrib\auth\views.py", line 89, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\generic\edit.py", line 151, in post
+    return self.form_valid(form)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\contrib\auth\views.py", line 109, in form_valid
+    return HttpResponseRedirect(self.get_success_url())
+                                ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\contrib\auth\views.py", line 41, in get_success_url
+    return self.get_redirect_url() or self.get_default_redirect_url()
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\contrib\auth\views.py", line 96, in get_default_redirect_url
+    return resolve_url(settings.LOGIN_REDIRECT_URL)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\shortcuts.py", line 180, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'top' not found. 'top' is not a valid view function or pattern name.
+Time : 2025-03-02 22:38:18,329 
+-Name : django.server
+-Type level : ERROR
+-Message : "POST /api/login/ HTTP/1.1" 500 167984
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\servers\basehttp.py]
+-Stack : None
+
+Time : 2025-03-02 22:38:46,147 
+-Name : django.request
+-Type level : ERROR
+-Message : Internal Server Error: /api/login/
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\log.py]
+-Stack : (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'top' not found. 'top' is not a valid view function or pattern name."), <traceback object at 0x000001D2E1DF0DC0>)
+Traceback (most recent call last):
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\decorators\debug.py", line 143, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\contrib\auth\views.py", line 89, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\generic\edit.py", line 151, in post
+    return self.form_valid(form)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\contrib\auth\views.py", line 109, in form_valid
+    return HttpResponseRedirect(self.get_success_url())
+                                ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\contrib\auth\views.py", line 41, in get_success_url
+    return self.get_redirect_url() or self.get_default_redirect_url()
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\contrib\auth\views.py", line 96, in get_default_redirect_url
+    return resolve_url(settings.LOGIN_REDIRECT_URL)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\shortcuts.py", line 180, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'top' not found. 'top' is not a valid view function or pattern name.
+Time : 2025-03-02 22:38:46,403 
+-Name : django.server
+-Type level : ERROR
+-Message : "POST /api/login/ HTTP/1.1" 500 167983
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\servers\basehttp.py]
+-Stack : None
+
+Time : 2025-03-02 22:39:59,533 
+-Name : django.request
+-Type level : ERROR
+-Message : Internal Server Error: /api/login/
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\log.py]
+-Stack : (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'top' not found. 'top' is not a valid view function or pattern name."), <traceback object at 0x000001F1F375ECC0>)
+Traceback (most recent call last):
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\decorators\debug.py", line 143, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\contrib\auth\views.py", line 89, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\generic\edit.py", line 151, in post
+    return self.form_valid(form)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\contrib\auth\views.py", line 109, in form_valid
+    return HttpResponseRedirect(self.get_success_url())
+                                ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\contrib\auth\views.py", line 41, in get_success_url
+    return self.get_redirect_url() or self.get_default_redirect_url()
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\contrib\auth\views.py", line 96, in get_default_redirect_url
+    return resolve_url(settings.LOGIN_REDIRECT_URL)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\shortcuts.py", line 180, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'top' not found. 'top' is not a valid view function or pattern name.
+Time : 2025-03-02 22:39:59,849 
+-Name : django.server
+-Type level : ERROR
+-Message : "POST /api/login/ HTTP/1.1" 500 167983
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\servers\basehttp.py]
+-Stack : None
+
+Time : 2025-03-02 22:40:24,536 
+-Name : django.request
+-Type level : ERROR
+-Message : Internal Server Error: /api/login/
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\log.py]
+-Stack : (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'top' not found. 'top' is not a valid view function or pattern name."), <traceback object at 0x000001B1A9F2B9C0>)
+Traceback (most recent call last):
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\decorators\debug.py", line 143, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\contrib\auth\views.py", line 89, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\generic\edit.py", line 151, in post
+    return self.form_valid(form)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\contrib\auth\views.py", line 109, in form_valid
+    return HttpResponseRedirect(self.get_success_url())
+                                ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\contrib\auth\views.py", line 41, in get_success_url
+    return self.get_redirect_url() or self.get_default_redirect_url()
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\contrib\auth\views.py", line 96, in get_default_redirect_url
+    return resolve_url(settings.LOGIN_REDIRECT_URL)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\shortcuts.py", line 180, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'top' not found. 'top' is not a valid view function or pattern name.
+Time : 2025-03-02 22:40:24,820 
+-Name : django.server
+-Type level : ERROR
+-Message : "POST /api/login/ HTTP/1.1" 500 167983
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\servers\basehttp.py]
+-Stack : None
+
+Time : 2025-03-05 12:03:27,709 
+-Name : django.request
+-Type level : ERROR
+-Message : Internal Server Error: /post/
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\log.py]
+-Stack : (<class 'django.db.utils.IntegrityError'>, IntegrityError('NOT NULL constraint failed: news_post.author_post_id'), <traceback object at 0x000001C97DE2F580>)
+Traceback (most recent call last):
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: NOT NULL constraint failed: news_post.author_post_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\mixins.py", line 24, in perform_create
+    serializer.save()
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\modeltranslation\manager.py", line 412, in create
+    return super().create(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\news\models.py", line 75, in save
+    super().save(*args, **kwargs)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\base.py", line 891, in save
+    self.save_base(
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\base.py", line 997, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\base.py", line 1160, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\base.py", line 1201, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 235, in execute
+    return self._record(super().execute, sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 160, in _record
+    return method(sql, params)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: NOT NULL constraint failed: news_post.author_post_id
+Time : 2025-03-05 12:03:27,822 
+-Name : django.server
+-Type level : ERROR
+-Message : "POST /post/ HTTP/1.1" 500 255992
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\servers\basehttp.py]
+-Stack : None
+
+Time : 2025-03-05 12:04:22,096 
+-Name : django.request
+-Type level : ERROR
+-Message : Internal Server Error: /post/
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\log.py]
+-Stack : (<class 'django.db.utils.IntegrityError'>, IntegrityError('NOT NULL constraint failed: news_post.author_post_id'), <traceback object at 0x000001C97E1AEB00>)
+Traceback (most recent call last):
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: NOT NULL constraint failed: news_post.author_post_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\mixins.py", line 24, in perform_create
+    serializer.save()
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\modeltranslation\manager.py", line 412, in create
+    return super().create(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\news\models.py", line 75, in save
+    super().save(*args, **kwargs)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\base.py", line 891, in save
+    self.save_base(
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\base.py", line 997, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\base.py", line 1160, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\base.py", line 1201, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 235, in execute
+    return self._record(super().execute, sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 160, in _record
+    return method(sql, params)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: NOT NULL constraint failed: news_post.author_post_id
+Time : 2025-03-05 12:04:22,214 
+-Name : django.server
+-Type level : ERROR
+-Message : "POST /post/?format=api HTTP/1.1" 500 258937
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\servers\basehttp.py]
+-Stack : None
+
+Time : 2025-03-05 13:04:15,063 
+-Name : django.request
+-Type level : ERROR
+-Message : Internal Server Error: /post/api/news/
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\log.py]
+-Stack : (<class 'django.db.utils.IntegrityError'>, IntegrityError('NOT NULL constraint failed: news_post.author_post_id'), <traceback object at 0x000001E2BF60CCC0>)
+Traceback (most recent call last):
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: NOT NULL constraint failed: news_post.author_post_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\mixins.py", line 24, in perform_create
+    serializer.save()
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\modeltranslation\manager.py", line 412, in create
+    return super().create(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\news\models.py", line 75, in save
+    super().save(*args, **kwargs)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\base.py", line 891, in save
+    self.save_base(
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\base.py", line 997, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\base.py", line 1160, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\base.py", line 1201, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 235, in execute
+    return self._record(super().execute, sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 160, in _record
+    return method(sql, params)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: NOT NULL constraint failed: news_post.author_post_id
+Time : 2025-03-05 13:04:15,184 
+-Name : django.server
+-Type level : ERROR
+-Message : "POST /post/api/news/ HTTP/1.1" 500 260189
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\servers\basehttp.py]
+-Stack : None
+
+Time : 2025-03-05 13:08:49,467 
+-Name : django.request
+-Type level : ERROR
+-Message : Internal Server Error: /post/api/news/
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\log.py]
+-Stack : (<class 'django.db.utils.IntegrityError'>, IntegrityError('NOT NULL constraint failed: news_post.author_post_id'), <traceback object at 0x0000018B21C04980>)
+Traceback (most recent call last):
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: NOT NULL constraint failed: news_post.author_post_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\news\views.py", line 23, in create
+    show_param = super().create(request, args, kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\mixins.py", line 24, in perform_create
+    serializer.save()
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\modeltranslation\manager.py", line 412, in create
+    return super().create(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\news\models.py", line 75, in save
+    super().save(*args, **kwargs)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\base.py", line 891, in save
+    self.save_base(
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\base.py", line 997, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\base.py", line 1160, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\base.py", line 1201, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 235, in execute
+    return self._record(super().execute, sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 160, in _record
+    return method(sql, params)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: NOT NULL constraint failed: news_post.author_post_id
+Time : 2025-03-05 13:08:49,609 
+-Name : django.server
+-Type level : ERROR
+-Message : "POST /post/api/news/ HTTP/1.1" 500 264758
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\servers\basehttp.py]
+-Stack : None
+
+Time : 2025-03-05 13:11:08,173 
+-Name : django.request
+-Type level : ERROR
+-Message : Internal Server Error: /post/api/news/
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\log.py]
+-Stack : (<class 'AssertionError'>, AssertionError("Expected a `Response`, `HttpResponse` or `StreamingHttpResponse` to be returned from the view, but received a `<class 'NoneType'>`"), <traceback object at 0x000002ADC3EDEAC0>)
+Traceback (most recent call last):
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 511, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 423, in finalize_response
+    assert isinstance(response, HttpResponseBase), (
+AssertionError: Expected a `Response`, `HttpResponse` or `StreamingHttpResponse` to be returned from the view, but received a `<class 'NoneType'>`
+Time : 2025-03-05 13:11:08,256 
+-Name : django.server
+-Type level : ERROR
+-Message : "POST /post/api/news/ HTTP/1.1" 500 101631
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\servers\basehttp.py]
+-Stack : None
+
+Time : 2025-03-05 13:12:36,651 
+-Name : django.request
+-Type level : ERROR
+-Message : Internal Server Error: /post/api/news/
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\log.py]
+-Stack : (<class 'django.core.exceptions.ImproperlyConfigured'>, ImproperlyConfigured('Could not resolve URL for hyperlinked relationship using view name "author-detail". You may have failed to include the related model in your API, or incorrectly configured the `lookup_field` attribute on this field.'), <traceback object at 0x0000018C7B095240>)
+Traceback (most recent call last):
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\relations.py", line 396, in to_representation
+    url = self.get_url(value, self.view_name, request, format)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\relations.py", line 334, in get_url
+    return self.reverse(view_name, kwargs=kwargs, request=request, format=format)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\reverse.py", line 47, in reverse
+    url = _reverse(viewname, args, kwargs, request, format, **extra)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\reverse.py", line 60, in _reverse
+    url = django_reverse(viewname, args=args, kwargs=kwargs, **extra)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'author-detail' not found. 'author-detail' is not a valid view function or pattern name.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\mixins.py", line 46, in list
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\serializers.py", line 795, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\serializers.py", line 714, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\serializers.py", line 538, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\relations.py", line 411, in to_representation
+    raise ImproperlyConfigured(msg % self.view_name)
+django.core.exceptions.ImproperlyConfigured: Could not resolve URL for hyperlinked relationship using view name "author-detail". You may have failed to include the related model in your API, or incorrectly configured the `lookup_field` attribute on this field.
+Time : 2025-03-05 13:12:36,765 
+-Name : django.server
+-Type level : ERROR
+-Message : "GET /post/api/news/ HTTP/1.1" 500 174055
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\servers\basehttp.py]
+-Stack : None
+
+Time : 2025-03-05 14:04:52,703 
+-Name : django.request
+-Type level : ERROR
+-Message : Internal Server Error: /post/api/news/
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\log.py]
+-Stack : (<class 'django.db.utils.IntegrityError'>, IntegrityError('NOT NULL constraint failed: news_post.author_post_id'), <traceback object at 0x000002D3249026C0>)
+Traceback (most recent call last):
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: NOT NULL constraint failed: news_post.author_post_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\mixins.py", line 24, in perform_create
+    serializer.save()
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\modeltranslation\manager.py", line 412, in create
+    return super().create(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\news\models.py", line 75, in save
+    super().save(*args, **kwargs)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\base.py", line 891, in save
+    self.save_base(
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\base.py", line 997, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\base.py", line 1160, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\base.py", line 1201, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 235, in execute
+    return self._record(super().execute, sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 160, in _record
+    return method(sql, params)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: NOT NULL constraint failed: news_post.author_post_id
+Time : 2025-03-05 14:04:52,800 
+-Name : django.server
+-Type level : ERROR
+-Message : "POST /post/api/news/ HTTP/1.1" 500 259932
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\servers\basehttp.py]
+-Stack : None
+
+Time : 2025-03-05 14:17:53,739 
+-Name : django.request
+-Type level : ERROR
+-Message : Internal Server Error: /post/api/news/
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\log.py]
+-Stack : (<class 'AssertionError'>, AssertionError("Expected a `Response`, `HttpResponse` or `StreamingHttpResponse` to be returned from the view, but received a `<class 'NoneType'>`"), <traceback object at 0x0000017930E852C0>)
+Traceback (most recent call last):
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 511, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 423, in finalize_response
+    assert isinstance(response, HttpResponseBase), (
+AssertionError: Expected a `Response`, `HttpResponse` or `StreamingHttpResponse` to be returned from the view, but received a `<class 'NoneType'>`
+Time : 2025-03-05 14:17:53,832 
+-Name : django.server
+-Type level : ERROR
+-Message : "POST /post/api/news/ HTTP/1.1" 500 101624
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\servers\basehttp.py]
+-Stack : None
+
+Time : 2025-03-05 14:19:09,751 
+-Name : django.request
+-Type level : ERROR
+-Message : Internal Server Error: /post/api/news/
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\log.py]
+-Stack : (<class 'AssertionError'>, AssertionError("Expected a `Response`, `HttpResponse` or `StreamingHttpResponse` to be returned from the view, but received a `<class 'NoneType'>`"), <traceback object at 0x000002D9EB0447C0>)
+Traceback (most recent call last):
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 511, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 423, in finalize_response
+    assert isinstance(response, HttpResponseBase), (
+AssertionError: Expected a `Response`, `HttpResponse` or `StreamingHttpResponse` to be returned from the view, but received a `<class 'NoneType'>`
+Time : 2025-03-05 14:19:09,834 
+-Name : django.server
+-Type level : ERROR
+-Message : "POST /post/api/news/ HTTP/1.1" 500 101624
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\servers\basehttp.py]
+-Stack : None
+
+Time : 2025-03-05 14:25:08,972 
+-Name : django.request
+-Type level : ERROR
+-Message : Internal Server Error: /post/api/news/
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\log.py]
+-Stack : (<class 'django.db.utils.IntegrityError'>, IntegrityError('NOT NULL constraint failed: news_post.author_post_id'), <traceback object at 0x00000211DBE51900>)
+Traceback (most recent call last):
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: NOT NULL constraint failed: news_post.author_post_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\mixins.py", line 24, in perform_create
+    serializer.save()
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\modeltranslation\manager.py", line 412, in create
+    return super().create(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\news\models.py", line 75, in save
+    super().save(*args, **kwargs)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\base.py", line 891, in save
+    self.save_base(
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\base.py", line 997, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\base.py", line 1160, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\base.py", line 1201, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 235, in execute
+    return self._record(super().execute, sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 160, in _record
+    return method(sql, params)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: NOT NULL constraint failed: news_post.author_post_id
+Time : 2025-03-05 14:25:09,182 
+-Name : django.server
+-Type level : ERROR
+-Message : "POST /post/api/news/ HTTP/1.1" 500 259930
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\servers\basehttp.py]
+-Stack : None
+
+Time : 2025-03-05 14:27:19,223 
+-Name : django.request
+-Type level : ERROR
+-Message : Internal Server Error: /post/api/news/
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\log.py]
+-Stack : (<class 'django.db.utils.IntegrityError'>, IntegrityError('NOT NULL constraint failed: news_post.author_post_id'), <traceback object at 0x00000254EC175B80>)
+Traceback (most recent call last):
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: NOT NULL constraint failed: news_post.author_post_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\mixins.py", line 24, in perform_create
+    serializer.save()
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\modeltranslation\manager.py", line 412, in create
+    return super().create(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\news\models.py", line 75, in save
+    super().save(*args, **kwargs)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\base.py", line 891, in save
+    self.save_base(
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\base.py", line 997, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\base.py", line 1160, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\base.py", line 1201, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 235, in execute
+    return self._record(super().execute, sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 160, in _record
+    return method(sql, params)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: NOT NULL constraint failed: news_post.author_post_id
+Time : 2025-03-05 14:27:19,384 
+-Name : django.server
+-Type level : ERROR
+-Message : "POST /post/api/news/ HTTP/1.1" 500 259930
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\servers\basehttp.py]
+-Stack : None
+
+Time : 2025-03-05 14:37:47,475 
+-Name : django.request
+-Type level : ERROR
+-Message : Internal Server Error: /post/api/news/
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\log.py]
+-Stack : (<class 'ValueError'>, ValueError('Cannot assign "<SimpleLazyObject: <User: ruslan>>": "Post.author_post" must be a "Author" instance.'), <traceback object at 0x000001E67DCCA540>)
+Traceback (most recent call last):
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\news\views.py", line 25, in perform_create
+    serializer.save(author_post = self.request.user)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\modeltranslation\manager.py", line 412, in create
+    return super().create(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\query.py", line 677, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\modeltranslation\translator.py", line 315, in new_init
+    old_init(self, *args, **kwargs)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\base.py", line 543, in __init__
+    _setattr(self, field.name, rel_obj)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\fields\related_descriptors.py", line 287, in __set__
+    raise ValueError(
+ValueError: Cannot assign "<SimpleLazyObject: <User: ruslan>>": "Post.author_post" must be a "Author" instance.
+Time : 2025-03-05 14:37:47,594 
+-Name : django.server
+-Type level : ERROR
+-Message : "POST /post/api/news/ HTTP/1.1" 500 166649
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\servers\basehttp.py]
+-Stack : None
+
+Time : 2025-03-05 14:38:14,672 
+-Name : django.request
+-Type level : ERROR
+-Message : Internal Server Error: /post/api/news/
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\log.py]
+-Stack : (<class 'ValueError'>, ValueError('Cannot assign "51": "Post.author_post" must be a "Author" instance.'), <traceback object at 0x000001CE048AE240>)
+Traceback (most recent call last):
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\news\views.py", line 25, in perform_create
+    serializer.save(author_post = self.request.user.id)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\modeltranslation\manager.py", line 412, in create
+    return super().create(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\query.py", line 677, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\modeltranslation\translator.py", line 315, in new_init
+    old_init(self, *args, **kwargs)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\base.py", line 543, in __init__
+    _setattr(self, field.name, rel_obj)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\fields\related_descriptors.py", line 287, in __set__
+    raise ValueError(
+ValueError: Cannot assign "51": "Post.author_post" must be a "Author" instance.
+Time : 2025-03-05 14:38:14,769 
+-Name : django.server
+-Type level : ERROR
+-Message : "POST /post/api/news/ HTTP/1.1" 500 165957
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\servers\basehttp.py]
+-Stack : None
+
+Time : 2025-03-05 14:39:01,220 
+-Name : django.request
+-Type level : ERROR
+-Message : Internal Server Error: /post/api/news/
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\log.py]
+-Stack : (<class 'TypeError'>, TypeError("'User' object is not iterable"), <traceback object at 0x000001484063E6C0>)
+Traceback (most recent call last):
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\news\views.py", line 25, in perform_create
+    author = Author.objects.get(self.request.user)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\query.py", line 635, in get
+    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\sql\query.py", line 1609, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\sql\query.py", line 1641, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\sql\query.py", line 1488, in build_filter
+    arg, value = filter_expr
+    ^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'User' object is not iterable
+Time : 2025-03-05 14:39:01,335 
+-Name : django.server
+-Type level : ERROR
+-Message : "POST /post/api/news/ HTTP/1.1" 500 162720
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\servers\basehttp.py]
+-Stack : None
+
+Time : 2025-03-05 14:39:46,343 
+-Name : django.request
+-Type level : ERROR
+-Message : Internal Server Error: /post/api/news/
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\log.py]
+-Stack : (<class 'news.models.Author.DoesNotExist'>, DoesNotExist('Author matching query does not exist.'), <traceback object at 0x000001DCF4AB3940>)
+Traceback (most recent call last):
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\news\views.py", line 25, in perform_create
+    author = Author.objects.get(id = self.request.user.id)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+news.models.Author.DoesNotExist: Author matching query does not exist.
+Time : 2025-03-05 14:39:46,453 
+-Name : django.server
+-Type level : ERROR
+-Message : "POST /post/api/news/ HTTP/1.1" 500 129471
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\servers\basehttp.py]
+-Stack : None
+
+Time : 2025-03-05 14:40:59,810 
+-Name : django.request
+-Type level : ERROR
+-Message : Internal Server Error: /post/api/news/
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\log.py]
+-Stack : (<class 'news.models.Author.DoesNotExist'>, DoesNotExist('Author matching query does not exist.'), <traceback object at 0x000001D93D76E240>)
+Traceback (most recent call last):
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\news\views.py", line 25, in perform_create
+    author = Author.objects.get(id = self.request.user.id)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+news.models.Author.DoesNotExist: Author matching query does not exist.
+Time : 2025-03-05 14:40:59,931 
+-Name : django.server
+-Type level : ERROR
+-Message : "POST /post/api/news/ HTTP/1.1" 500 129448
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\servers\basehttp.py]
+-Stack : None
+
+Time : 2025-03-05 14:41:31,684 
+-Name : django.request
+-Type level : ERROR
+-Message : Internal Server Error: /post/api/news/
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\log.py]
+-Stack : (<class 'news.models.Author.DoesNotExist'>, DoesNotExist('Author matching query does not exist.'), <traceback object at 0x000001AD5E80E400>)
+Traceback (most recent call last):
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\news\views.py", line 25, in perform_create
+    author = Author.objects.get(id = self.request.user.id)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+news.models.Author.DoesNotExist: Author matching query does not exist.
+Time : 2025-03-05 14:41:31,775 
+-Name : django.server
+-Type level : ERROR
+-Message : "POST /post/api/news/ HTTP/1.1" 500 129448
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\servers\basehttp.py]
+-Stack : None
+
+Time : 2025-03-05 14:43:26,725 
+-Name : django.request
+-Type level : ERROR
+-Message : Internal Server Error: /post/api/news/
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\log.py]
+-Stack : (<class 'TypeError'>, TypeError("'User' object is not iterable"), <traceback object at 0x000001F90BA1B000>)
+Traceback (most recent call last):
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\news\views.py", line 25, in perform_create
+    author = Author.objects.get(self.request.user)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\query.py", line 635, in get
+    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\sql\query.py", line 1609, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\sql\query.py", line 1641, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\sql\query.py", line 1488, in build_filter
+    arg, value = filter_expr
+    ^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'User' object is not iterable
+Time : 2025-03-05 14:43:26,841 
+-Name : django.server
+-Type level : ERROR
+-Message : "POST /post/api/news/ HTTP/1.1" 500 162697
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\servers\basehttp.py]
+-Stack : None
+
+Time : 2025-03-05 14:50:38,228 
+-Name : django.request
+-Type level : ERROR
+-Message : Internal Server Error: /post/api/articles/
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\log.py]
+-Stack : (<class 'django.db.utils.IntegrityError'>, IntegrityError('NOT NULL constraint failed: news_post.author_post_id'), <traceback object at 0x000001EB8AB32100>)
+Traceback (most recent call last):
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: NOT NULL constraint failed: news_post.author_post_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\mixins.py", line 24, in perform_create
+    serializer.save()
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\modeltranslation\manager.py", line 412, in create
+    return super().create(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\news\models.py", line 75, in save
+    super().save(*args, **kwargs)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\base.py", line 891, in save
+    self.save_base(
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\base.py", line 997, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\base.py", line 1160, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\base.py", line 1201, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 235, in execute
+    return self._record(super().execute, sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 160, in _record
+    return method(sql, params)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: NOT NULL constraint failed: news_post.author_post_id
+Time : 2025-03-05 14:50:38,325 
+-Name : django.server
+-Type level : ERROR
+-Message : "POST /post/api/articles/ HTTP/1.1" 500 259206
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\servers\basehttp.py]
+-Stack : None
+
+Time : 2025-03-05 14:57:14,336 
+-Name : django.request
+-Type level : ERROR
+-Message : Internal Server Error: /post/subscribe/
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\log.py]
+-Stack : (<class 'AttributeError'>, AttributeError("'AnonymousUser' object has no attribute 'categorysubscribers_set'"), <traceback object at 0x00000237E7FC4240>)
+Traceback (most recent call last):
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\news\views.py", line 174, in subscribe
+    sub_or_not = request.user.categorysubscribers_set.all().values()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'categorysubscribers_set'
+Time : 2025-03-05 14:57:14,387 
+-Name : django.server
+-Type level : ERROR
+-Message : "GET /post/subscribe/ HTTP/1.1" 500 92646
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\servers\basehttp.py]
+-Stack : None
+
+Time : 2025-03-05 14:57:15,111 
+-Name : django.request
+-Type level : ERROR
+-Message : Internal Server Error: /post/subscribe/
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\log.py]
+-Stack : (<class 'AttributeError'>, AttributeError("'AnonymousUser' object has no attribute 'categorysubscribers_set'"), <traceback object at 0x00000237E7CBF240>)
+Traceback (most recent call last):
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\news\views.py", line 174, in subscribe
+    sub_or_not = request.user.categorysubscribers_set.all().values()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'categorysubscribers_set'
+Time : 2025-03-05 14:57:15,147 
+-Name : django.server
+-Type level : ERROR
+-Message : "GET /post/subscribe/ HTTP/1.1" 500 92646
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\servers\basehttp.py]
+-Stack : None
+
+Time : 2025-03-05 14:57:16,201 
+-Name : django.request
+-Type level : ERROR
+-Message : Internal Server Error: /post/subscribe/
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\log.py]
+-Stack : (<class 'AttributeError'>, AttributeError("'AnonymousUser' object has no attribute 'categorysubscribers_set'"), <traceback object at 0x00000237E8165880>)
+Traceback (most recent call last):
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\news\views.py", line 174, in subscribe
+    sub_or_not = request.user.categorysubscribers_set.all().values()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'categorysubscribers_set'
+Time : 2025-03-05 14:57:16,235 
+-Name : django.server
+-Type level : ERROR
+-Message : "GET /post/subscribe/ HTTP/1.1" 500 92646
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\servers\basehttp.py]
+-Stack : None
+
+Time : 2025-03-05 14:57:19,229 
+-Name : django.request
+-Type level : ERROR
+-Message : Internal Server Error: /post/subscribe/
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\log.py]
+-Stack : (<class 'AttributeError'>, AttributeError("'AnonymousUser' object has no attribute 'categorysubscribers_set'"), <traceback object at 0x00000237E822BF80>)
+Traceback (most recent call last):
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\news\views.py", line 174, in subscribe
+    sub_or_not = request.user.categorysubscribers_set.all().values()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'categorysubscribers_set'
+Time : 2025-03-05 14:57:19,268 
+-Name : django.server
+-Type level : ERROR
+-Message : "GET /post/subscribe/ HTTP/1.1" 500 92646
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\servers\basehttp.py]
+-Stack : None
+
+Time : 2025-03-05 14:57:20,331 
+-Name : django.request
+-Type level : ERROR
+-Message : Internal Server Error: /post/subscribe/
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\log.py]
+-Stack : (<class 'AttributeError'>, AttributeError("'AnonymousUser' object has no attribute 'categorysubscribers_set'"), <traceback object at 0x00000237E826BA40>)
+Traceback (most recent call last):
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\news\views.py", line 174, in subscribe
+    sub_or_not = request.user.categorysubscribers_set.all().values()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'categorysubscribers_set'
+Time : 2025-03-05 14:57:20,378 
+-Name : django.server
+-Type level : ERROR
+-Message : "GET /post/subscribe/ HTTP/1.1" 500 92646
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\servers\basehttp.py]
+-Stack : None
+
+Time : 2025-03-05 14:57:21,391 
+-Name : django.request
+-Type level : ERROR
+-Message : Internal Server Error: /post/subscribe/
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\log.py]
+-Stack : (<class 'AttributeError'>, AttributeError("'AnonymousUser' object has no attribute 'categorysubscribers_set'"), <traceback object at 0x00000237E838B280>)
+Traceback (most recent call last):
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\news\views.py", line 174, in subscribe
+    sub_or_not = request.user.categorysubscribers_set.all().values()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'categorysubscribers_set'
+Time : 2025-03-05 14:57:21,432 
+-Name : django.server
+-Type level : ERROR
+-Message : "GET /post/subscribe/ HTTP/1.1" 500 92646
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\servers\basehttp.py]
+-Stack : None
+
+Time : 2025-03-05 14:57:22,370 
+-Name : django.request
+-Type level : ERROR
+-Message : Internal Server Error: /post/subscribe/
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\log.py]
+-Stack : (<class 'AttributeError'>, AttributeError("'AnonymousUser' object has no attribute 'categorysubscribers_set'"), <traceback object at 0x00000237E841C140>)
+Traceback (most recent call last):
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\news\views.py", line 174, in subscribe
+    sub_or_not = request.user.categorysubscribers_set.all().values()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'categorysubscribers_set'
+Time : 2025-03-05 14:57:22,411 
+-Name : django.server
+-Type level : ERROR
+-Message : "GET /post/subscribe/ HTTP/1.1" 500 92646
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\servers\basehttp.py]
+-Stack : None
+
+Time : 2025-03-05 14:57:37,627 
+-Name : django.request
+-Type level : ERROR
+-Message : Internal Server Error: /post/subscribe/
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\log.py]
+-Stack : (<class 'AttributeError'>, AttributeError("'AnonymousUser' object has no attribute 'categorysubscribers_set'"), <traceback object at 0x00000237E85D1840>)
+Traceback (most recent call last):
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\news\views.py", line 174, in subscribe
+    sub_or_not = request.user.categorysubscribers_set.all().values()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'categorysubscribers_set'
+Time : 2025-03-05 14:57:37,689 
+-Name : django.server
+-Type level : ERROR
+-Message : "GET /post/subscribe/ HTTP/1.1" 500 92647
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\servers\basehttp.py]
+-Stack : None
+
+Time : 2025-03-05 15:04:02,512 
+-Name : django.request
+-Type level : ERROR
+-Message : Internal Server Error: /post/subscribe/
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\log.py]
+-Stack : (<class 'AttributeError'>, AttributeError("'AnonymousUser' object has no attribute 'categorysubscribers_set'"), <traceback object at 0x000001303560FA00>)
+Traceback (most recent call last):
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\news\views.py", line 174, in subscribe
+    sub_or_not = request.user.categorysubscribers_set.all().values()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'categorysubscribers_set'
+Time : 2025-03-05 15:04:02,567 
+-Name : django.server
+-Type level : ERROR
+-Message : "GET /post/subscribe/ HTTP/1.1" 500 92637
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\servers\basehttp.py]
+-Stack : None
+
+Time : 2025-03-05 15:04:03,552 
+-Name : django.request
+-Type level : ERROR
+-Message : Internal Server Error: /post/subscribe/
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\log.py]
+-Stack : (<class 'AttributeError'>, AttributeError("'AnonymousUser' object has no attribute 'categorysubscribers_set'"), <traceback object at 0x000001303591DD00>)
+Traceback (most recent call last):
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\news\views.py", line 174, in subscribe
+    sub_or_not = request.user.categorysubscribers_set.all().values()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'categorysubscribers_set'
+Time : 2025-03-05 15:04:03,597 
+-Name : django.server
+-Type level : ERROR
+-Message : "GET /post/subscribe/ HTTP/1.1" 500 92638
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\servers\basehttp.py]
+-Stack : None
+
+Time : 2025-03-05 15:04:04,734 
+-Name : django.request
+-Type level : ERROR
+-Message : Internal Server Error: /post/subscribe/
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\log.py]
+-Stack : (<class 'AttributeError'>, AttributeError("'AnonymousUser' object has no attribute 'categorysubscribers_set'"), <traceback object at 0x0000013035B15BC0>)
+Traceback (most recent call last):
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\news\views.py", line 174, in subscribe
+    sub_or_not = request.user.categorysubscribers_set.all().values()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'categorysubscribers_set'
+Time : 2025-03-05 15:04:04,854 
+-Name : django.server
+-Type level : ERROR
+-Message : "GET /post/subscribe/ HTTP/1.1" 500 92638
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\servers\basehttp.py]
+-Stack : None
+
+Time : 2025-03-05 15:04:06,586 
+-Name : django.request
+-Type level : ERROR
+-Message : Internal Server Error: /post/subscribe/
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\log.py]
+-Stack : (<class 'AttributeError'>, AttributeError("'AnonymousUser' object has no attribute 'categorysubscribers_set'"), <traceback object at 0x0000013035BF2AC0>)
+Traceback (most recent call last):
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\news\views.py", line 174, in subscribe
+    sub_or_not = request.user.categorysubscribers_set.all().values()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'categorysubscribers_set'
+Time : 2025-03-05 15:04:06,632 
+-Name : django.server
+-Type level : ERROR
+-Message : "GET /post/subscribe/ HTTP/1.1" 500 92637
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\servers\basehttp.py]
+-Stack : None
+
+Time : 2025-03-05 15:04:08,169 
+-Name : django.request
+-Type level : ERROR
+-Message : Internal Server Error: /post/subscribe/
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\log.py]
+-Stack : (<class 'AttributeError'>, AttributeError("'AnonymousUser' object has no attribute 'categorysubscribers_set'"), <traceback object at 0x0000013035C47F80>)
+Traceback (most recent call last):
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\news\views.py", line 174, in subscribe
+    sub_or_not = request.user.categorysubscribers_set.all().values()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'categorysubscribers_set'
+Time : 2025-03-05 15:04:08,219 
+-Name : django.server
+-Type level : ERROR
+-Message : "GET /post/subscribe/ HTTP/1.1" 500 92637
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\servers\basehttp.py]
+-Stack : None
+
+Time : 2025-03-05 15:04:11,452 
+-Name : django.request
+-Type level : ERROR
+-Message : Internal Server Error: /post/subscribe/
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\log.py]
+-Stack : (<class 'AttributeError'>, AttributeError("'AnonymousUser' object has no attribute 'categorysubscribers_set'"), <traceback object at 0x0000013035D2C200>)
+Traceback (most recent call last):
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\news\views.py", line 174, in subscribe
+    sub_or_not = request.user.categorysubscribers_set.all().values()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'categorysubscribers_set'
+Time : 2025-03-05 15:04:11,501 
+-Name : django.server
+-Type level : ERROR
+-Message : "GET /post/subscribe/ HTTP/1.1" 500 92637
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\servers\basehttp.py]
+-Stack : None
+
+Time : 2025-03-05 15:04:13,316 
+-Name : django.request
+-Type level : ERROR
+-Message : Internal Server Error: /post/subscribe/
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\log.py]
+-Stack : (<class 'AttributeError'>, AttributeError("'AnonymousUser' object has no attribute 'categorysubscribers_set'"), <traceback object at 0x0000013035DB56C0>)
+Traceback (most recent call last):
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\news\views.py", line 174, in subscribe
+    sub_or_not = request.user.categorysubscribers_set.all().values()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'categorysubscribers_set'
+Time : 2025-03-05 15:04:13,364 
+-Name : django.server
+-Type level : ERROR
+-Message : "GET /post/subscribe/ HTTP/1.1" 500 92637
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\servers\basehttp.py]
+-Stack : None
+
+Time : 2025-03-05 15:04:14,521 
+-Name : django.request
+-Type level : ERROR
+-Message : Internal Server Error: /post/subscribe/
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\log.py]
+-Stack : (<class 'AttributeError'>, AttributeError("'AnonymousUser' object has no attribute 'categorysubscribers_set'"), <traceback object at 0x0000013035E13C40>)
+Traceback (most recent call last):
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\news\views.py", line 174, in subscribe
+    sub_or_not = request.user.categorysubscribers_set.all().values()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'categorysubscribers_set'
+Time : 2025-03-05 15:04:14,563 
+-Name : django.server
+-Type level : ERROR
+-Message : "GET /post/subscribe/ HTTP/1.1" 500 92637
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\servers\basehttp.py]
+-Stack : None
+
+Time : 2025-03-05 15:05:33,993 
+-Name : django.request
+-Type level : ERROR
+-Message : Internal Server Error: /post/subscribe/
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\log.py]
+-Stack : (<class 'AttributeError'>, AttributeError("'AnonymousUser' object has no attribute 'categorysubscribers_set'"), <traceback object at 0x0000013035F1A940>)
+Traceback (most recent call last):
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\news\views.py", line 174, in subscribe
+    sub_or_not = request.user.categorysubscribers_set.all().values()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'categorysubscribers_set'
+Time : 2025-03-05 15:05:34,035 
+-Name : django.server
+-Type level : ERROR
+-Message : "GET /post/subscribe/ HTTP/1.1" 500 92637
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\servers\basehttp.py]
+-Stack : None
+
+Time : 2025-03-05 15:07:04,374 
+-Name : django.request
+-Type level : ERROR
+-Message : Internal Server Error: /post/subscribe/
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\log.py]
+-Stack : (<class 'AttributeError'>, AttributeError("'AnonymousUser' object has no attribute 'categorysubscribers_set'"), <traceback object at 0x0000013035F869C0>)
+Traceback (most recent call last):
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\news\views.py", line 174, in subscribe
+    sub_or_not = request.user.categorysubscribers_set.all().values()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'categorysubscribers_set'
+Time : 2025-03-05 15:07:04,414 
+-Name : django.server
+-Type level : ERROR
+-Message : "GET /post/subscribe/ HTTP/1.1" 500 92638
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\servers\basehttp.py]
+-Stack : None
+
+Time : 2025-03-05 15:07:04,970 
+-Name : django.request
+-Type level : ERROR
+-Message : Internal Server Error: /post/subscribe/
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\log.py]
+-Stack : (<class 'AttributeError'>, AttributeError("'AnonymousUser' object has no attribute 'categorysubscribers_set'"), <traceback object at 0x000001303601E700>)
+Traceback (most recent call last):
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\news\views.py", line 174, in subscribe
+    sub_or_not = request.user.categorysubscribers_set.all().values()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'categorysubscribers_set'
+Time : 2025-03-05 15:07:05,024 
+-Name : django.server
+-Type level : ERROR
+-Message : "GET /post/subscribe/ HTTP/1.1" 500 92637
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\servers\basehttp.py]
+-Stack : None
+
+Time : 2025-03-05 15:07:05,502 
+-Name : django.request
+-Type level : ERROR
+-Message : Internal Server Error: /post/subscribe/
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\log.py]
+-Stack : (<class 'AttributeError'>, AttributeError("'AnonymousUser' object has no attribute 'categorysubscribers_set'"), <traceback object at 0x000001303608F100>)
+Traceback (most recent call last):
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\news\views.py", line 174, in subscribe
+    sub_or_not = request.user.categorysubscribers_set.all().values()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'categorysubscribers_set'
+Time : 2025-03-05 15:07:05,557 
+-Name : django.server
+-Type level : ERROR
+-Message : "GET /post/subscribe/ HTTP/1.1" 500 92637
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\servers\basehttp.py]
+-Stack : None
+
+Time : 2025-03-05 15:07:05,883 
+-Name : django.request
+-Type level : ERROR
+-Message : Internal Server Error: /post/subscribe/
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\log.py]
+-Stack : (<class 'AttributeError'>, AttributeError("'AnonymousUser' object has no attribute 'categorysubscribers_set'"), <traceback object at 0x00000130361500C0>)
+Traceback (most recent call last):
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\news\views.py", line 174, in subscribe
+    sub_or_not = request.user.categorysubscribers_set.all().values()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'categorysubscribers_set'
+Time : 2025-03-05 15:07:05,932 
+-Name : django.server
+-Type level : ERROR
+-Message : "GET /post/subscribe/ HTTP/1.1" 500 92637
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\servers\basehttp.py]
+-Stack : None
+
+Time : 2025-03-05 15:07:06,137 
+-Name : django.request
+-Type level : ERROR
+-Message : Internal Server Error: /post/subscribe/
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\log.py]
+-Stack : (<class 'AttributeError'>, AttributeError("'AnonymousUser' object has no attribute 'categorysubscribers_set'"), <traceback object at 0x00000130361F8E80>)
+Traceback (most recent call last):
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\NewsPaper\news\views.py", line 174, in subscribe
+    sub_or_not = request.user.categorysubscribers_set.all().values()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\utils\functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'categorysubscribers_set'
+Time : 2025-03-05 15:07:06,185 
+-Name : django.server
+-Type level : ERROR
+-Message : "GET /post/subscribe/ HTTP/1.1" 500 92637
+-Path : [C:\Users\ruskn\OneDrive\Рабочий стол\DjangoWeb\venv\Lib\site-packages\django\core\servers\basehttp.py]
+-Stack : None
+

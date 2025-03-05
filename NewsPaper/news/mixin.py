@@ -1,6 +1,17 @@
 from .models import Author, Category, Post, Comment
 from datetime import datetime, timedelta
 from django.views.generic import ListView
+from .serialyze import PostSerialyzes
+from rest_framework import viewsets, permissions
+
+class PostApiMixin(viewsets.ModelViewSet):
+    permission_classes = [permissions.IsAuthenticated]
+    serializer_class = PostSerialyzes
+
+    def perform_create(self, serializer):
+        author = Author.objects.get(name__id = self.request.user.id)
+        serializer.save(author_post = author)
+
 
 
 class AuthorMixin:
